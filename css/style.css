@@ -1,0 +1,1627 @@
+/* =========================================================
+   ULS Steinhagen – Modern Redesign  |  style.css
+   =========================================================
+   Color tokens:
+     --green-dark:  #2D5016  (brand / primary)
+     --green-mid:   #4A7C2F  (accent)
+     --green-light: #8BB564  (highlight)
+     --cream:       #F5F2EC  (background)
+     --warm-gray:   #5A5A52  (body text)
+     --white:       #FFFFFF
+   ========================================================= */
+   
+/* =========================================================
+   FONTS
+   ---------------------------------------------------------
+    Two families are used:
+     - Playfair Display  → var(--font-heading)  (used on h1-h4)
+     - Inter             → var(--font-body)     (used everywhere else)
+   ========================================================= */
+
+@font-face {
+  font-family: 'Playfair Display';                           /* EDIT: rename to your font name */
+  src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';                              /* EDIT: rename to your font name */
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';                              /* EDIT: same name, different weight */
+  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';                              /* EDIT: same name, semibold weight */
+  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ── Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green-dark:  #2D5016;
+  --green-mid:   #4A7C2F;
+  --green-light: #8BB564;
+  --cream:       #F5F2EC;
+  --warm-gray:   #5A5A52;
+  --white:       #FFFFFF;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 2px 8px rgba(45,80,22,.10);
+  --shadow-md: 0 6px 24px rgba(45,80,22,.14);
+  --shadow-lg: 0 16px 48px rgba(45,80,22,.18);
+
+  --transition: 0.28s cubic-bezier(.4,0,.2,1);
+  --max-width: 1160px;
+  --section-gap: 7rem;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--warm-gray);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a  { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ── Typography ──────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--green-dark);
+  line-height: 1.2;
+  font-weight: 700;
+}
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+h4 { font-size: 1.1rem; }
+
+p  { max-width: 68ch; }
+.text-center p { margin-inline: auto; }
+
+
+/* =========================================================
+   ICON SLOTS
+   ---------------------------------------------------------
+   Every decorative icon in this design uses a shared
+   .icon-slot element.  It is an empty inline container
+   sized to 1em × 1em by default (overridden where needed).
+
+   HOW TO ADD YOUR OWN ICON:
+   --------------------------
+   Option A – inline SVG:
+     <span class="icon-slot" aria-hidden="true">
+       <svg viewBox="0 0 24 24" ...>...</svg>
+     </span>
+
+   Option B – <img>:
+     <span class="icon-slot" aria-hidden="true">
+       <img src="../images/icons/my-icon.svg" alt="" />
+     </span>
+
+   Option C – icon font (e.g. Font Awesome):
+     <span class="icon-slot" aria-hidden="true">
+       <i class="fa-solid fa-leaf"></i>
+     </span>
+
+   The slots already have display/size/colour styles set.
+   You usually only need to paste your icon markup inside.
+   ========================================================= */
+
+.icon-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  /* size is set by the component that uses the slot */
+}
+/* Make sure SVGs/imgs inside slots fill the slot */
+.icon-slot svg,
+.icon-slot img { width: 100%; height: 100%; display: block; }
+
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+  border: 2px solid transparent;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: var(--green-dark);
+  color: var(--white);
+  border-color: var(--green-dark);
+}
+.btn-primary:hover {
+  background: var(--green-mid);
+  border-color: var(--green-mid);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--green-dark);
+  border-color: var(--green-dark);
+}
+.btn-outline:hover {
+  background: var(--green-dark);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Section helpers ─────────────────────────────────── */
+.section { padding-block: var(--section-gap); }
+.section-label {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin-bottom: .75rem;
+}
+.section-title { margin-bottom: 1rem; }
+.section-intro {
+  font-size: 1.1rem;
+  color: var(--warm-gray);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+.divider {
+  width: 3rem;
+  height: 3px;
+  background: var(--green-light);
+  border-radius: 2px;
+  margin-block: 1rem 2.5rem;
+}
+.section-more {                       /* "Alle ... ansehen" link row */
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* ── NAV ─────────────────────────────────────────────── */
+/* index.html uses id="navbar"; subpages use id="site-header" – both covered */
+#navbar,
+#site-header,
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+#navbar.scrolled,
+#site-header.scrolled,
+.site-header.scrolled {
+  background: rgba(245,242,236,.97);
+  box-shadow: 0 2px 16px rgba(45,80,22,.12);
+  backdrop-filter: blur(8px);
+}
+.nav-inner,
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* --- Logo -------------------------------------------- */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--white);
+  transition: color var(--transition);
+}
+#navbar.scrolled .nav-logo,
+#site-header.scrolled .nav-logo,
+.site-header.scrolled .nav-logo { color: var(--green-dark); }
+
+/* Subpages: header starts opaque (no hero behind it) */
+#site-header.scrolled,
+.site-header.scrolled { background: rgba(245,242,236,.97); }
+#site-header .nav-logo,
+.site-header .nav-logo { color: var(--green-dark); }
+
+/* Logo icon wrapper – drop your logo inside .nav-logo-icon */
+.nav-logo-icon {
+  width: 36px; height: 36px;
+  background: var(--green-dark);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;       /* clips images to the circle */
+  transition: background var(--transition);
+}
+/*
+   LOGO SLOT – replace the placeholder content:
+   <div class="nav-logo-icon" aria-hidden="true">
+     <!-- Option A: SVG -->
+     <svg ...>...</svg>
+
+     <!-- Option B: image file from your images/ folder -->
+     <img src="images/logo.svg" alt="" />
+   </div>
+*/
+.nav-logo-icon .icon-slot {
+  width: 22px; height: 22px;
+  color: var(--white);
+}
+
+.nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.nav-logo-text span:first-child { font-size: 1rem; }
+.nav-logo-text span:last-child { font-size: .7rem; font-weight: 400; opacity: .8; }
+
+/* --- Nav links -------------------------------------- */
+/* index.html uses #nav-links; subpages use #nav-menu – both covered */
+.nav-links,
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a,
+.nav-menu a,
+.nav-menu .nav-link {
+  font-size: .9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.9);
+  transition: color var(--transition);
+  position: relative;
+}
+/* Subpage headers start opaque, so links are dark by default */
+#site-header .nav-link,
+.site-header .nav-link { color: var(--warm-gray); }
+
+.nav-links a::after,
+.nav-menu .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 2px;
+  background: var(--green-light);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+.nav-links a:hover::after,
+.nav-menu .nav-link:hover::after { transform: scaleX(1); }
+.nav-links a:hover,
+.nav-menu .nav-link:hover { color: var(--white); }
+#navbar.scrolled .nav-links a,
+#site-header.scrolled .nav-link,
+.site-header.scrolled .nav-link { color: var(--warm-gray); }
+#navbar.scrolled .nav-links a:hover,
+#site-header.scrolled .nav-link:hover,
+.site-header.scrolled .nav-link:hover { color: var(--green-dark); }
+#navbar.scrolled .nav-links a::after,
+#site-header.scrolled .nav-link::after,
+.site-header.scrolled .nav-link::after { background: var(--green-mid); }
+
+.nav-cta,
+.nav-link--cta {
+  background: var(--white) !important;
+  color: var(--green-dark) !important;
+  padding: .45rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600 !important;
+  font-size: .85rem !important;
+  border: 2px solid transparent;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition) !important;
+}
+.nav-cta::after,
+.nav-link--cta::after { display: none !important; }
+.nav-cta:hover,
+.nav-link--cta:hover {
+  background: var(--green-dark) !important;
+  color: var(--white) !important;
+  box-shadow: var(--shadow-sm);
+}
+#navbar.scrolled .nav-cta,
+#site-header.scrolled .nav-link--cta,
+.site-header.scrolled .nav-link--cta {
+  background: var(--green-dark) !important;
+  color: var(--white) !important;
+}
+#navbar.scrolled .nav-cta:hover,
+#site-header.scrolled .nav-link--cta:hover,
+.site-header.scrolled .nav-link--cta:hover {
+  background: var(--green-mid) !important;
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: .4rem;
+}
+/* Both the old <span> children and the new .hamburger-bar class */
+.nav-toggle span,
+.hamburger-bar {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition), background var(--transition);
+}
+/* Subpages: bars are dark because header is opaque */
+#site-header .hamburger-bar,
+.site-header .hamburger-bar { background: var(--green-dark); }
+#navbar.scrolled .nav-toggle span,
+#site-header.scrolled .hamburger-bar,
+.site-header.scrolled .hamburger-bar { background: var(--green-dark); }
+/* Open state – .open or .is-active, with <span> or .hamburger-bar children */
+.nav-toggle.open span:nth-child(1),
+.nav-toggle.is-active span:nth-child(1),
+.nav-toggle.is-active .hamburger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2),
+.nav-toggle.is-active span:nth-child(2),
+.nav-toggle.is-active .hamburger-bar:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3),
+.nav-toggle.is-active span:nth-child(3),
+.nav-toggle.is-active .hamburger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ── HERO ─────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/hero-forest.png');  /* EDIT: your hero background image */
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  transition: transform 8s ease-out;
+}
+.hero-bg.loaded { transform: scale(1); }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(20,45,10,.72) 0%, rgba(45,80,22,.45) 60%, rgba(0,0,0,.2) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  backdrop-filter: blur(6px);
+  color: var(--white);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+.hero-badge-dot {
+  width: 7px; height: 7px;
+  background: var(--green-light);
+  border-radius: 50%;
+  animation: pulse 2.2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .5; transform: scale(1.35); }
+}
+.hero-title {
+  color: var(--white);
+  max-width: 14ch;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,.35);
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--green-light);
+}
+.hero-sub {
+  color: rgba(255,255,255,.88);
+  font-size: 1.15rem;
+  max-width: 52ch;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-actions .btn-primary {
+  background: var(--green-mid);
+  border-color: var(--green-mid);
+}
+.hero-actions .btn-outline {
+  border-color: rgba(255,255,255,.6);
+  color: var(--white);
+}
+.hero-actions .btn-outline:hover {
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  color: rgba(255,255,255,.7);
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.hero-scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,.7), transparent);
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%   { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+}
+
+
+/* ── STATS BAR ───────────────────────────────────────── */
+#stats {
+  background: var(--green-dark);
+  padding-block: 2.5rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+.stat-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--green-light);
+  line-height: 1;
+  margin-bottom: .3rem;
+}
+.stat-label {
+  font-size: .85rem;
+  color: rgba(255,255,255,.75);
+  letter-spacing: .04em;
+}
+
+
+/* ── ABOUT (homepage preview) ────────────────────────── */
+#about { background: var(--white); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-image-wrap {
+  position: relative;
+}
+.about-image-wrap img {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  box-shadow: var(--shadow-lg);
+}
+.about-badge-float {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--green-dark);
+  color: var(--white);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+.about-badge-float strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1;
+}
+.about-badge-float span { font-size: .8rem; opacity: .85; }
+
+/* Checklist inside about */
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-bottom: 2rem;
+}
+.about-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+}
+/* Checkmark icon slot for the about-list items */
+.about-list-icon {
+  width: 22px; height: 22px;
+  background: var(--green-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: .1rem;
+  /*
+     ICON SLOT – place a checkmark icon here:
+     <span class="about-list-icon" aria-hidden="true">
+       <span class="icon-slot" style="width:12px;height:12px;color:white;">
+         <!-- your checkmark SVG or img -->
+       </span>
+     </span>
+  */
+}
+
+
+/* ── NEWS section (homepage preview) ─────────────────── */
+#news { background: var(--cream); }
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.news-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.news-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  /*
+     IMAGE SLOT – replace with your own photo:
+     <img class="news-card-img" src="images/my-news-photo.jpg" alt="Beschreibung des Bildes" loading="lazy" />
+  */
+}
+.news-card-body { padding: 1.5rem; }
+.news-card-tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  background: rgba(74,124,47,.1);
+  padding: .25rem .65rem;
+  border-radius: 999px;
+  margin-bottom: .85rem;
+}
+.news-card-title {
+  font-size: 1.15rem;
+  margin-bottom: .6rem;
+  color: var(--green-dark);
+}
+.news-card-excerpt {
+  font-size: .9rem;
+  color: var(--warm-gray);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: none;
+}
+.news-card-meta {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .8rem;
+  color: rgba(90,90,82,.6);
+}
+/* Icon slot for news meta row (calendar, book, etc.) */
+.news-card-meta .icon-slot {
+  width: 14px; height: 14px;
+  color: rgba(90,90,82,.6);
+  flex-shrink: 0;
+}
+
+
+/* ── EVENTS section (homepage preview) ───────────────── */
+#events { background: var(--white); }
+.events-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 4rem;
+  align-items: start;
+}
+.event-item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(45,80,22,.1);
+  align-items: start;
+  transition: background var(--transition);
+}
+.event-item:last-child { border-bottom: none; }
+.event-date-box {
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  padding: .6rem .4rem;
+  flex-shrink: 0;
+}
+.event-day {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1;
+}
+.event-month {
+  display: block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+}
+.event-info h4 { margin-bottom: .3rem; color: var(--green-dark); }
+.event-info p { font-size: .9rem; max-width: none; }
+.event-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: .5rem;
+}
+.event-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  background: rgba(74,124,47,.1);
+  padding: .2rem .6rem;
+  border-radius: 999px;
+}
+/* Icon slot inside event tags */
+.event-tag .icon-slot {
+  width: 11px; height: 11px;
+  color: var(--green-mid);
+}
+
+/* Sticky highlight card */
+.next-event-card {
+  background: var(--green-dark);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  color: var(--white);
+  position: sticky;
+  top: 6rem;
+}
+.next-event-label {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 1rem;
+}
+.next-event-date {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: .5rem;
+}
+.next-event-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: .75rem;
+}
+.next-event-desc { font-size: .9rem; color: rgba(255,255,255,.8); margin-bottom: 1.5rem; max-width: none; }
+.next-event-card .btn-outline {
+  border-color: rgba(255,255,255,.4);
+  color: var(--white);
+  width: 100%;
+  justify-content: center;
+}
+.next-event-card .btn-outline:hover {
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+}
+
+
+/* ── TOPICS (homepage preview + themen.html) ─────────── */
+#topics { background: var(--cream); }
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.topic-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  border: 1px solid rgba(45,80,22,.08);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-light);
+}
+/* Icon slot for topic cards */
+.topic-icon {
+  width: 52px; height: 52px;
+  background: rgba(74,124,47,.1);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: background var(--transition);
+  /*
+     ICON SLOT – add your topic icon inside:
+     <div class="topic-icon" aria-hidden="true">
+       <span class="icon-slot" style="width:26px;height:26px;color:var(--green-dark);">
+         <!-- your icon SVG, img, or icon-font element -->
+       </span>
+     </div>
+  */
+}
+.topic-card:hover .topic-icon { background: var(--green-dark); }
+.topic-icon .icon-slot {
+  width: 26px; height: 26px;
+  color: var(--green-dark);
+  transition: color var(--transition);
+}
+.topic-card:hover .topic-icon .icon-slot { color: var(--white); }
+.topic-card h4 { margin-bottom: .5rem; font-size: 1.05rem; }
+.topic-card p { font-size: .88rem; line-height: 1.6; max-width: none; }
+
+
+/* ── PRESSEECHO (gallery page) ───────────────────────── */
+#presseecho { background: var(--cream); }
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.press-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.press-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.press-card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: var(--cream); /* visible when image is missing */
+  /*
+     IMAGE SLOT – replace with newspaper scan / photo:
+     <img class="press-card-img" src="images/presse/artikel-2025.jpg"
+          alt="Zeitungsartikel: [Titel]" loading="lazy" />
+  */
+}
+.press-card-body { padding: 1.25rem; }
+.press-card-source {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin-bottom: .4rem;
+}
+.press-card-title {
+  font-size: 1rem;
+  color: var(--green-dark);
+  margin-bottom: .4rem;
+}
+.press-card-date { font-size: .82rem; color: var(--warm-gray); }
+
+
+/* ── ÜBER UNS (ueber-uns.html) ───────────────────────── */
+.ueber-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-bottom: 3rem;
+}
+.ueber-nav a {
+  display: inline-block;
+  padding: .5rem 1.25rem;
+  border: 1.5px solid var(--green-mid);
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  transition: background var(--transition), color var(--transition);
+}
+.ueber-nav a:hover,
+.ueber-nav a.active {
+  background: var(--green-dark);
+  color: var(--white);
+  border-color: var(--green-dark);
+}
+
+/* Board / Vorstand table */
+.vorstand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.vorstand-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--green-light);
+}
+/* Photo slot inside vorstand card */
+.vorstand-photo {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  background: var(--cream);    /* fallback when no image is set */
+  border: 3px solid var(--green-light);
+  /*
+     IMAGE SLOT:
+     <img class="vorstand-photo" src="images/team/vorname-nachname.jpg"
+          alt="Foto von [Name]" />
+  */
+}
+.vorstand-card h4 { font-size: 1rem; margin-bottom: .2rem; }
+.vorstand-card .role {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  margin-bottom: .5rem;
+}
+.vorstand-card p { font-size: .85rem; max-width: none; }
+
+
+/* ── THEMEN TABS (themen.html) ───────────────────────── */
+.tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  border-bottom: 2px solid rgba(45,80,22,.12);
+  margin-bottom: 3rem;
+}
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .65rem 1.25rem;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--warm-gray);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;         /* sits on the border line */
+  transition: color var(--transition), border-color var(--transition);
+}
+/* Icon slot inside tab buttons */
+.tab-btn .icon-slot {
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+.tab-btn:hover { color: var(--green-dark); }
+.tab-btn.active,
+.tab-btn.is-active {
+  color: var(--green-dark);
+  border-bottom-color: var(--green-dark);
+}
+.tab-panel { display: none; }
+.tab-panel.active,
+.tab-panel.is-active { display: block; }
+
+/* Rich content block inside a tab panel */
+.topic-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.topic-content-text h3 { margin-bottom: 1rem; }
+.topic-content-text p  { margin-bottom: 1rem; }
+.topic-content-text ul { margin-bottom: 1rem; padding-left: 1.25rem; list-style: disc; }
+.topic-content-text ul li { margin-bottom: .4rem; font-size: .95rem; }
+
+/* Image slot inside topic content panels */
+.topic-content-img {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+  background: var(--cream);  /* fallback */
+  /*
+     IMAGE SLOT:
+     <img class="topic-content-img" src="images/themen/naturschutz.jpg"
+          alt="Beschreibung des Themas" loading="lazy" />
+  */
+}
+
+
+/* ── CONTACT ─────────────────────────────────────────── */
+#contact { background: var(--white); }
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+/* Icon slot for contact info icons (map pin, phone, email) */
+.contact-info-icon {
+  width: 44px; height: 44px;
+  background: rgba(74,124,47,.1);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  /*
+     ICON SLOT:
+     <div class="contact-info-icon" aria-hidden="true">
+       <span class="icon-slot" style="width:20px;height:20px;color:var(--green-dark);">
+         <!-- your pin / phone / mail icon -->
+       </span>
+     </div>
+  */
+}
+.contact-info-icon .icon-slot {
+  width: 20px; height: 20px;
+  color: var(--green-dark);
+}
+.contact-info-text strong { display: block; font-size: .85rem; font-weight: 700; color: var(--green-dark); margin-bottom: .2rem; }
+.contact-info-text span { font-size: .9rem; }
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.form-group { display: flex; flex-direction: column; gap: .4rem; }
+.form-group label {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  letter-spacing: .02em;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: .75rem 1rem;
+  border: 1.5px solid rgba(45,80,22,.2);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--warm-gray);
+  background: var(--cream);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  width: 100%;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 3px rgba(74,124,47,.12);
+}
+.form-group textarea { resize: vertical; min-height: 130px; }
+.form-submit { align-self: flex-start; }
+
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer {
+  background: var(--green-dark);
+  color: rgba(255,255,255,.8);
+  padding-top: 4rem;
+  padding-bottom: 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.footer-brand p { font-size: .9rem; line-height: 1.7; margin-top: .75rem; color: rgba(255,255,255,.7); }
+.footer-brand .nav-logo-icon { background: rgba(255,255,255,.12); }
+
+.footer-col h5 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: .6rem; }
+.footer-col ul li a {
+  font-size: .88rem;
+  color: rgba(255,255,255,.65);
+  transition: color var(--transition);
+}
+.footer-col ul li a:hover { color: var(--green-light); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem;
+  font-size: .82rem;
+  color: rgba(255,255,255,.45);
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+.footer-bottom a { color: rgba(255,255,255,.55); transition: color var(--transition); }
+.footer-bottom a:hover { color: var(--green-light); }
+
+
+/* ── SUBPAGE HERO (all inner pages) ──────────────────── */
+.page-hero {
+  background: var(--green-dark);
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+.page-hero h1 { color: var(--white); margin-bottom: .75rem; }
+.page-hero p  { color: rgba(255,255,255,.75); font-size: 1.1rem; margin-inline: auto; }
+
+/* Content section on subpages */
+.page-content { padding-block: var(--section-gap); }
+.page-content.bg-white { background: var(--white); }
+.page-content.bg-cream { background: var(--cream); }
+
+
+/* ── TIMELINE (termine.html) ─────────────────────────── */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.tl-year {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin: 3rem 0 1.5rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--green-light);
+}
+.tl-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(45,80,22,.1);
+  align-items: start;
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-date {
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  padding-top: .15rem;
+}
+.tl-content h4 { color: var(--green-dark); margin-bottom: .3rem; font-size: 1rem; }
+.tl-content p  { font-size: .88rem; color: var(--warm-gray); max-width: none; }
+.tl-tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--green-mid);
+  background: rgba(74,124,47,.1);
+  padding: .2rem .55rem;
+  border-radius: 999px;
+  margin-top: .4rem;
+}
+
+
+/* ── Scroll reveal ───────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+/* JS adds .is-visible (new pages) or .visible (index.html legacy) */
+.reveal.is-visible,
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Back-to-top ─────────────────────────────────────── */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--green-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition), background var(--transition);
+  box-shadow: var(--shadow-md);
+  z-index: 900;
+}
+#back-to-top.visible,
+#back-to-top.is-visible { opacity: 1; pointer-events: auto; }
+#back-to-top:hover { background: var(--green-mid); transform: translateY(-3px); }
+/* Icon slot for back-to-top arrow */
+#back-to-top .icon-slot {
+  width: 18px; height: 18px;
+  color: var(--white);
+}
+
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about-grid           { grid-template-columns: 1fr; gap: 3rem; }
+  .about-image-wrap img { height: 340px; }
+  .about-badge-float    { bottom: -1rem; right: .5rem; }
+  .events-layout        { grid-template-columns: 1fr; }
+  .next-event-card      { position: static; }
+  .contact-layout       { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-grid          { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .topic-content        { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  :root { --section-gap: 4.5rem; }
+  .nav-links,
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 4.5rem; left: 0; right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 0;
+    box-shadow: var(--shadow-md);
+  }
+  .nav-links.open,
+  .nav-links.is-open,
+  .nav-menu.is-open { display: flex; }
+  .nav-links a,
+  .nav-menu a,
+  .nav-menu .nav-link {
+    display: block;
+    padding: .85rem 0;
+    border-bottom: 1px solid rgba(45,80,22,.08);
+    color: var(--warm-gray) !important;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .nav-links a:last-child,
+  .nav-menu li:last-child a,
+  .nav-menu li:last-child .nav-link { border-bottom: none; }
+  .nav-links .nav-cta,
+  .nav-menu .nav-link--cta { margin-top: .5rem; text-align: center; width: 100%; justify-content: center; }
+  .nav-toggle { display: flex; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .form-row    { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .topics-grid { grid-template-columns: 1fr; }
+  .news-grid   { grid-template-columns: 1fr; }
+  .press-grid  { grid-template-columns: 1fr; }
+  .tl-item     { grid-template-columns: 1fr; gap: .25rem; }
+  .vorstand-grid { grid-template-columns: 1fr 1fr; }
+  .ueber-nav   { gap: .5rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-title    { font-size: 2rem; }
+  .stats-grid    { grid-template-columns: 1fr 1fr; }
+  .vorstand-grid { grid-template-columns: 1fr; }
+  .board-grid    { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+}
+
+
+/* =========================================================
+   SUBPAGE COMPONENTS
+   (vorstand.html, mitgliedschaft.html, ueber-uns.html,
+    ziele.html, news.html, presseecho.html, termine.html)
+   ========================================================= */
+
+/* ── Subpage hero tweaks ──────────────────────────────── */
+.page-hero {
+  background: var(--green-dark);
+  padding: 8rem 0 4rem;
+}
+.page-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--white);
+  margin-bottom: .75rem;
+}
+.page-hero__subtitle {
+  color: rgba(255,255,255,.75);
+  font-size: 1.1rem;
+  max-width: 60ch;
+}
+
+/* ── Breadcrumb ───────────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem;
+  font-size: .82rem;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 1.25rem;
+}
+.breadcrumb a { color: rgba(255,255,255,.75); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--green-light); }
+.breadcrumb span[aria-current] { color: var(--white); font-weight: 600; }
+
+/* ── Section helpers for subpages ─────────────────────── */
+.section--alt   { background: var(--cream); }
+.section--flush-top { padding-top: 0; }
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--green-dark);
+  margin-bottom: 2rem;
+}
+.section-heading--centered { text-align: center; }
+
+/* Shared button aliases (subpages use .btn--primary / .btn--outline) */
+.btn--primary { background: var(--green-dark); color: var(--white); border-color: var(--green-dark); }
+.btn--primary:hover { background: var(--green-mid); border-color: var(--green-mid); box-shadow: var(--shadow-md); }
+.btn--outline { background: transparent; color: var(--green-dark); border-color: var(--green-dark); }
+.btn--outline:hover { background: var(--green-dark); color: var(--white); }
+
+/* ── Container narrow variant ─────────────────────────── */
+.container--narrow { max-width: 780px; }
+
+/* ── Lead text ────────────────────────────────────────── */
+.lead-text {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--warm-gray);
+  margin-bottom: 1.5rem;
+  max-width: 72ch;
+}
+
+/* ── Plain list (Kassenprüfer, Satzung bullet points) ─── */
+.plain-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.plain-list li { font-size: .95rem; padding-left: 1.25rem; position: relative; }
+.plain-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--green-mid);
+  font-weight: 700;
+}
+
+/* ── Board / Vorstand cards (vorstand.html) ───────────── */
+/*
+   BOARD GRID: auto-fills columns with min 240px width.
+   HOW TO ADD A MEMBER: copy an <article class="board-card"> block.
+   HOW TO REMOVE: delete the <article> block.
+*/
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.board-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--green-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.board-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.board-card__photo {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--cream);
+  border: 3px solid var(--green-light);
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  /*
+     IMAGE SLOT – once you have a photo:
+     Replace <span class="icon-slot icon-slot--person"> with:
+     <img src="images/vorstand/name.jpg" alt="Foto [Name]" />
+     Recommended size: 200×200 px (will be cropped to circle)
+  */
+}
+.board-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Placeholder icon inside empty photo slots */
+.icon-slot--person {
+  width: 44px; height: 44px;
+  color: var(--green-light);
+}
+.board-card__name {
+  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  color: var(--green-dark);
+  margin-bottom: .25rem;
+}
+.board-card__role {
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--green-mid);
+  margin-bottom: .75rem;
+}
+.board-card__bio { font-size: .88rem; color: var(--warm-gray); max-width: none; }
+.board-card__email {
+  display: inline-block;
+  margin-top: .75rem;
+  font-size: .82rem;
+  color: var(--green-mid);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Membership benefits grid (mitgliedschaft.html) ───── */
+/*
+   HOW TO ADD A BENEFIT: copy a .benefit-item block.
+   HOW TO REMOVE: delete the .benefit-item block.
+*/
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.benefit-item {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.benefit-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.benefit-item__icon {
+  width: 60px; height: 60px;
+  background: rgba(74,124,47,.1);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+  transition: background var(--transition);
+  /*
+     ICON SLOT – add your icon inside:
+     <span class="icon-slot" style="width:28px;height:28px;color:var(--green-dark);">
+       your icon here
+     </span>
+  */
+}
+.benefit-item:hover .benefit-item__icon { background: var(--green-dark); }
+.icon-slot--sm { width: 28px; height: 28px; color: var(--green-dark); }
+.benefit-item:hover .icon-slot--sm { color: var(--white); }
+.benefit-item__title { font-size: 1rem; color: var(--green-dark); margin-bottom: .5rem; }
+.benefit-item__desc  { font-size: .88rem; color: var(--warm-gray); max-width: none; }
+
+/* ── Fees table (mitgliedschaft.html) ─────────────────── */
+/*
+   HOW TO EDIT: update <td> content directly in HTML.
+   HOW TO ADD ROW: copy a <tr> inside <tbody>.
+   HOW TO REMOVE: delete the <tr>.
+*/
+.fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .95rem;
+  margin-bottom: 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.fees-table th {
+  background: var(--green-dark);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: .85rem 1.25rem;
+  text-align: left;
+}
+.fees-table td {
+  padding: .85rem 1.25rem;
+  border-bottom: 1px solid rgba(45,80,22,.08);
+  color: var(--warm-gray);
+}
+.fees-table tbody tr:last-child td { border-bottom: none; }
+.fees-table tbody tr:nth-child(even) td { background: var(--cream); }
+.fees-note {
+  font-size: .88rem;
+  color: var(--warm-gray);
+  font-style: italic;
+  margin-top: .75rem;
+}
+
+/* ── Download block (mitgliedschaft.html) ─────────────── */
+.download-block {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--cream);
+  border: 1.5px solid rgba(45,80,22,.15);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-block: 1.5rem;
+}
+.download-block .icon-slot { width: 36px; height: 36px; flex-shrink: 0; color: var(--green-dark); }
+.download-block__label { font-size: .9rem; font-weight: 600; color: var(--green-dark); margin-bottom: .5rem; }
+
+/* ── Ueber-uns sub-navigation pills ───────────────────── */
+.ueber-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-bottom: 3rem;
+}
+.ueber-subnav a {
+  display: inline-block;
+  padding: .5rem 1.25rem;
+  border: 1.5px solid var(--green-mid);
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.ueber-subnav a:hover,
+.ueber-subnav a.is-active {
+  background: var(--green-dark);
+  color: var(--white);
+  border-color: var(--green-dark);
+}
+
+/* ── Tabs wrapper for themen.html ─────────────────────── */
+/*
+   The .tabs-wrapper groups the .tabs-nav and .tabs-panels together.
+   JS looks for this wrapper to find the matching nav + panels pair.
+*/
+.tabs-wrapper { width: 100%; }
+.tabs-panels  { width: 100%; }
+
+/* ── Ziele / content blocks (ziele.html) ──────────────── */
+.content-block {
+  margin-bottom: 3rem;
+}
+.content-block h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--green-light);
+}
+.content-block p  { margin-bottom: 1rem; }
+.content-block ul { padding-left: 1.5rem; list-style: disc; margin-bottom: 1rem; }
+.content-block ul li { margin-bottom: .4rem; font-size: .95rem; }
+
+/* ── Icon logo slot ───────────────────────────────────── */
+.icon-slot--logo {
+  width: 22px; height: 22px;
+  color: var(--white);
+}
+#site-header .icon-slot--logo,
+.site-header .icon-slot--logo { color: var(--green-dark); }
+
+/* ── Responsive additions for new components ─────────── */
+@media (max-width: 768px) {
+  .board-grid    { grid-template-columns: 1fr 1fr; }
+  .benefits-grid { grid-template-columns: 1fr 1fr; }
+  .download-block { flex-direction: column; align-items: flex-start; }
+  .fees-table td,
+  .fees-table th { padding: .65rem .85rem; }
+  .ueber-subnav { gap: .5rem; }
+  .tabs-nav { gap: .25rem; }
+  .tab-btn  { font-size: .82rem; padding: .55rem .85rem; }
+}

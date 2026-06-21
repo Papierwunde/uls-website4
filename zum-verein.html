@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zum Verein – Geschichte und Hintergrund des ULS Steinhagen." />
+  <meta name="theme-color" content="#2D5016" />
+  <title>Zum Verein – ULS Steinhagen</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+        </div>
+        <div class="nav-logo-text">
+          <span>ULS Steinhagen</span>
+          <span>Umwelt &amp; Lebensqualität</span>
+        </div>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
+        <a href="ueber-uns.html" aria-current="page">Über uns</a>
+        <a href="news.html">Aktuelles</a>
+        <a href="termine.html">Termine</a>
+        <a href="themen.html">Unsere Themen</a>
+        <a href="presseecho.html">Presseecho</a>
+        <a href="index.html#contact" class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page hero -->
+    <div class="page-hero">
+      <div class="container">
+        <span class="section-label" style="color:var(--green-light);">Über uns</span>
+        <h1>Zum Verein</h1><!-- EDIT -->
+        <p>Wer wir sind und wofür wir stehen.</p><!-- EDIT -->
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════
+         SUB-NAVIGATION
+    ══════════════════════════════════════════════════ -->
+    <section class="page-content bg-white" style="padding-block:2rem 0;">
+      <div class="container">
+        <nav class="ueber-nav" aria-label="Über-uns-Unterseiten">
+          <a href="zum-verein.html" class="is-active">Zum Verein</a>
+          <a href="vorstand.html">Vorstand</a>
+          <a href="ziele.html">Ziele &amp; Satzung</a>
+          <a href="mitgliedschaft.html">Mitglied werden</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         CONTENT – main text + image
+    ══════════════════════════════════════════════════ -->
+    <section class="page-content bg-white" aria-labelledby="verein-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Image side -->
+          <div class="about-image-wrap reveal">
+            <!-- IMAGE SLOT: photo of the association or nature scene -->
+            <img
+              src="images/hero-forest.png"
+              alt="Mitglieder des ULS Steinhagen bei einer Aktion"<!-- EDIT: descriptive alt text -->
+              loading="lazy"
+            /><!-- EDIT src -->
+          </div>
+
+          <!-- Text side -->
+          <div class="reveal">
+            <span class="section-label">Zum Verein</span>
+            <h2 class="section-title" id="verein-heading">Wer wir sind</h2><!-- EDIT -->
+            <div class="divider"></div>
+            <p>
+              <!-- EDIT: first paragraph about the association -->
+              Der Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. (ULS)
+              wurde im Jahr 1991 gegründet. Als gemeinnützige Bürgerinitiative engagieren wir uns
+              für den Schutz der Natur und eine lebenswerte Gemeinde.
+            </p>
+            <p style="margin-top:1rem;">
+              <!-- EDIT: second paragraph (history, background, etc.) -->
+              Hier können Sie die Geschichte des Vereins, wichtige Meilensteine und weitere
+              Hintergrundinformationen eintragen.
+            </p>
+            <p style="margin-top:1rem;">
+              <!-- EDIT: third paragraph (optional – delete if not needed) -->
+              Weitere Informationen, Projekte oder Zitate von Mitgliedern können hier ergänzt werden.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite" style="color:white;">
+            <div class="nav-logo-icon" aria-hidden="true">
+              <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+            </div>
+            <div class="nav-logo-text" style="color:white;">
+              <span>ULS Steinhagen</span>
+              <span>Umwelt &amp; Lebensqualität</span>
+            </div>
+          </a>
+          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. – gegründet 1991.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="news.html">Aktuelles</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="themen.html">Unsere Themen</a></li>
+            <li><a href="presseecho.html">Presseecho</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Über uns</h5>
+          <ul>
+            <li><a href="zum-verein.html">Zum Verein</a></li>
+            <li><a href="vorstand.html">Vorstand</a></li>
+            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
+            <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5>
+          <ul>
+            <li><a href="mailto:umweltverein@uls-steinhagen.de">E-Mail schreiben</a></li>
+            <li><a href="tel:+4952048911">05204 89118</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
+        <div style="display:flex;gap:1.25rem;">
+          <a href="impressum.html">Impressum</a>
+          <a href="impressum.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Zurück nach oben">
+    <span class="icon-slot" aria-hidden="true" style="width:18px;height:18px;color:white;"></span>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Titel des Artikels – ULS Steinhagen" /><!-- EDIT -->
+  <meta name="theme-color" content="#2D5016" />
+  <title>Titel des Artikels – ULS Steinhagen</title><!-- EDIT -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .article-header { padding-block: 3rem; background: var(--cream); }
+    .article-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: .9rem; color: var(--warm-gray); margin-bottom: 2rem; }
+    .article-body { max-width: 68ch; margin-block: 3rem; }
+    .article-body p { margin-bottom: 1.25rem; line-height: 1.8; }
+    .article-body h2 { font-size: 1.4rem; color: var(--green-dark); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin-block: 2rem; }
+    .article-footer { display: flex; gap: 1.5rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(45,80,22,.15); }
+    .back-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--green-mid); text-decoration: none; font-weight: 500; }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+        </div>
+        <div class="nav-logo-text">
+          <span>ULS Steinhagen</span>
+          <span>Umwelt &amp; Lebensqualität</span>
+        </div>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="news.html" aria-current="page">Aktuelles</a>
+        <a href="termine.html">Termine</a>
+        <a href="themen.html">Unsere Themen</a>
+        <a href="presseecho.html">Presseecho</a>
+        <a href="index.html#contact" class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Article header -->
+    <div class="article-header">
+      <div class="container container--narrow">
+        <span class="section-label">Aktuelles</span>
+        <h1 style="margin-top: .5rem;">Titel des Artikels</h1><!-- EDIT -->
+        
+        <!-- Meta info: tag, date, author (optional) -->
+        <div class="article-meta">
+          <span style="background:rgba(74,124,47,.1);padding:.35rem .75rem;border-radius:999px;font-weight:600;color:var(--green-dark);">Jahresempfang</span><!-- EDIT: change category tag -->
+          <span>📅 TT. Monat JJJJ</span><!-- EDIT: date -->
+          <span>✍️ Autoren-Name (optional)</span><!-- EDIT or remove -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Article content -->
+    <section class="page-content bg-white">
+      <div class="container container--narrow">
+        
+        <!-- Hero image for the article (optional) -->
+        <img 
+          src="images/hero-forest.png" 
+          alt="Beschreibung des Bildes"<!-- EDIT -->
+          loading="lazy"
+          style="max-width:100%;height:auto;border-radius:var(--radius-md);margin-bottom:2rem;"
+        /><!-- EDIT src or remove entirely -->
+
+        <!-- Article body text -->
+        <div class="article-body">
+          
+          <p>
+            <!-- EDIT: opening paragraph – sum up the topic -->
+            Dies ist der erste Absatz des Artikels. Hier können Sie eine kurze Einleitung 
+            zum Thema geben, um den Leser neugierig zu machen.
+          </p>
+
+          <p>
+            <!-- EDIT: main content paragraph -->
+            Hier folgt der Haupttext des Artikels. Sie können mehrere Absätze hinzufügen,
+            um die Geschichte zu erzählen oder Informationen bereitzustellen.
+            Nutzen Sie &lt;strong&gt;...&lt;/strong&gt; oder &lt;em&gt;...&lt;/em&gt; 
+            für Betonung, wenn nötig.
+          </p>
+
+          <h2>Zwischenüberschrift (optional)</h2><!-- EDIT or remove -->
+          <p>
+            <!-- EDIT: section content -->
+            Unter Zwischenüberschriften können Sie verschiedene Aspekte des Themas 
+            durchleuchten.
+          </p>
+
+          <!-- Optional: second image inside the article -->
+          <img 
+            src="images/hero-forest.png" 
+            alt="Zweites Bild – Beschreibung"<!-- EDIT -->
+            loading="lazy"
+          /><!-- EDIT src or remove -->
+
+          <p>
+            <!-- EDIT: closing paragraph or call-to-action -->
+            Zum Abschluss können Sie noch weitere Informationen hinzufügen oder den Leser 
+            einladen, mehr zu erfahren oder den Verein zu unterstützen.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related articles / back link -->
+    <section class="page-content bg-cream">
+      <div class="container container--narrow">
+        <a href="news.html" class="back-link">
+          <span>←</span>
+          <span>Zurück zu allen Beiträgen</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite" style="color:white;">
+            <div class="nav-logo-icon" aria-hidden="true">
+              <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+            </div>
+            <div class="nav-logo-text" style="color:white;">
+              <span>ULS Steinhagen</span>
+              <span>Umwelt &amp; Lebensqualität</span>
+            </div>
+          </a>
+          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. – gegründet 1991.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="news.html">Aktuelles</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="themen.html">Unsere Themen</a></li>
+            <li><a href="presseecho.html">Presseecho</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Über uns</h5>
+          <ul>
+            <li><a href="zum-verein.html">Zum Verein</a></li>
+            <li><a href="vorstand.html">Vorstand</a></li>
+            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
+            <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5>
+          <ul>
+            <li><a href="mailto:umweltverein@uls-steinhagen.de">E-Mail schreiben</a></li>
+            <li><a href="tel:+4952048911">05204 89118</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
+        <div style="display:flex;gap:1.25rem;">
+          <a href="impressum.html">Impressum</a>
+          <a href="impressum.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Zurück nach oben">
+    <span class="icon-slot" aria-hidden="true" style="width:18px;height:18px;color:white;"></span>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

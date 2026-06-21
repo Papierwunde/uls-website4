@@ -1,0 +1,48 @@
+/*FONTS*/
+/* ==========================================================================
+   INTER (Stärken: 400, 500, 600)
+   ========================================================================== */
+/* Inter Regular (400) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+/* Inter Medium (500) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+/* Inter Semi-Bold (600) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2');
+}
+/* ==========================================================================
+   PLAYFAIR DISPLAY (Stärke: 700)
+   ========================================================================== */
+
+/* Playfair Display Bold (700) */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+}
+
+
+In HTML auskommentieren!!!:
+ <!--
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  -->

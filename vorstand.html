@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vorstand – ULS Steinhagen</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+    NAVIGATION
+    Shared navigation bar. Keep href paths consistent across all pages.
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-container" role="navigation" aria-label="Hauptnavigation">
+
+      <!-- LOGO: Replace the text below with an <img> tag if you have a logo file.
+           Example: <img src="images/logo.svg" alt="ULS Steinhagen" class="nav-logo-img" /> -->
+      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
+        <!-- ICON SLOT: place your logo icon here.
+             Example: <img src="images/logo-icon.svg" alt="" aria-hidden="true" />
+             Size recommendation: 32×32 px -->
+        <span class="icon-slot icon-slot--logo" aria-hidden="true"></span>
+        <span class="nav-logo-text">ULS Steinhagen</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+        <!-- ICON SLOT: hamburger icon (3 lines). Remove this span once you add your own icon. -->
+        <span class="icon-slot icon-slot--hamburger" aria-hidden="true"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="index.html#termine" class="nav-link">Termine</a></li>
+        <li><a href="news.html" class="nav-link">News</a></li>
+        <li><a href="presseecho.html" class="nav-link">Presseecho</a></li>
+        <li class="nav-item--active"><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+        <li><a href="themen.html" class="nav-link">Unsere Themen</a></li>
+        <li><a href="index.html#kontakt" class="nav-link nav-link--cta">Kontakt</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- ============================================================
+    PAGE HERO
+    Simple header strip for subpages.
+  ============================================================ -->
+  <section class="page-hero">
+    <div class="container">
+      <!-- BREADCRUMB: adjust the chain if this page moves to a different location -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Startseite</a>
+        <span aria-hidden="true">/</span>
+        <a href="ueber-uns.html">Über uns</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Vorstand</span>
+      </nav>
+      <h1 class="page-hero__title">Vorstand</h1>
+      <!-- EDIT: short subtitle for this page -->
+      <p class="page-hero__subtitle">Die Personen hinter dem Verein</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    MAIN CONTENT
+  ============================================================ -->
+  <main id="main-content">
+
+    <!-- ============================================================
+      VORSTAND INTRO
+      A short introductory paragraph about the board.
+    ============================================================ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <!-- EDIT: replace this paragraph with your own intro text -->
+        <p class="lead-text">
+          Der Vorstand des ULS Steinhagen e.V. besteht aus ehrenamtlichen Mitgliedern, die sich
+          für die Ziele des Vereins einsetzen. Hier stellen wir uns vor.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      VORSTANDSMITGLIEDER
+      One card per board member.
+      HOW TO ADD A MEMBER:
+        1. Copy one <article class="board-card"> block.
+        2. Paste it after the last board-card inside .board-grid.
+        3. Fill in name, role, and optional bio text.
+        4. Replace the icon-slot with a portrait <img> if available.
+      HOW TO REMOVE A MEMBER:
+        Simply delete the entire <article class="board-card"> block.
+    ============================================================ -->
+    <section class="section section--flush-top">
+      <div class="container">
+
+        <div class="board-grid">
+
+          <!-- BOARD MEMBER 1 ----------------------------------- -->
+          <article class="board-card">
+            <div class="board-card__photo">
+              <!-- ICON SLOT / PHOTO SLOT:
+                   Option A – own portrait photo:
+                     <img src="images/vorstand-max-mustermann.jpg" alt="Max Mustermann" />
+                   Option B – placeholder icon until photo is available:
+                     <img src="images/person-placeholder.png" alt="" aria-hidden="true" />
+                   Recommended image size: 300×300 px (square), will be cropped to circle. -->
+              <span class="icon-slot icon-slot--person" aria-hidden="true"></span>
+            </div>
+            <div class="board-card__body">
+              <!-- EDIT: name -->
+              <h2 class="board-card__name">Vorname Nachname</h2>
+              <!-- EDIT: role/function inside the board -->
+              <p class="board-card__role">1. Vorsitzende/r</p>
+              <!-- EDIT: optional short bio or contact hint. Delete the <p> if not needed. -->
+              <p class="board-card__bio">
+                <!-- Kurze Beschreibung oder Kontakthinweis hier einfügen. -->
+              </p>
+              <!-- EDIT: optional email link. Delete the <a> if not needed. -->
+              <!-- <a href="mailto:name@example.de" class="board-card__email">name@example.de</a> -->
+            </div>
+          </article>
+
+          <!-- BOARD MEMBER 2 ----------------------------------- -->
+          <article class="board-card">
+            <div class="board-card__photo">
+              <span class="icon-slot icon-slot--person" aria-hidden="true"></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Vorname Nachname</h2>
+              <p class="board-card__role">2. Vorsitzende/r</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <!-- BOARD MEMBER 3 ----------------------------------- -->
+          <article class="board-card">
+            <div class="board-card__photo">
+              <span class="icon-slot icon-slot--person" aria-hidden="true"></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Vorname Nachname</h2>
+              <p class="board-card__role">Schatzmeister/in</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <!-- BOARD MEMBER 4 ----------------------------------- -->
+          <article class="board-card">
+            <div class="board-card__photo">
+              <span class="icon-slot icon-slot--person" aria-hidden="true"></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Vorname Nachname</h2>
+              <p class="board-card__role">Schriftführer/in</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <!-- BOARD MEMBER 5 ----------------------------------- -->
+          <article class="board-card">
+            <div class="board-card__photo">
+              <span class="icon-slot icon-slot--person" aria-hidden="true"></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Vorname Nachname</h2>
+              <p class="board-card__role">Beisitzer/in</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <!-- BOARD MEMBER 6 ----------------------------------- -->
+          <article class="board-card">
+            <div class="board-card__photo">
+              <span class="icon-slot icon-slot--person" aria-hidden="true"></span>
+            </div>
+            <div class="board-card__body">
+              <h2 class="board-card__name">Vorname Nachname</h2>
+              <p class="board-card__role">Beisitzer/in</p>
+              <p class="board-card__bio"></p>
+            </div>
+          </article>
+
+          <!-- ADD MORE MEMBERS: copy an <article class="board-card"> block above -->
+
+        </div><!-- /.board-grid -->
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+      REVISIONSKOMMISSION / KASSENPRÜFER
+      Optional section. Delete the entire <section> if not needed.
+    ============================================================ -->
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <h2 class="section-heading">Kassenprüfer</h2>
+        <!-- EDIT: list the Kassenprüfer names and roles here -->
+        <ul class="plain-list">
+          <li>
+            <strong>Vorname Nachname</strong> – Kassenprüfer/in
+          </li>
+          <li>
+            <strong>Vorname Nachname</strong> – Kassenprüfer/in (Stellvertretung)
+          </li>
+          <!-- ADD MORE: copy a <li> line above -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      BACK-LINK
+    ============================================================ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <a href="ueber-uns.html" class="btn btn--outline">&larr; Zurück zu Über uns</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+    FOOTER
+    Keep in sync with index.html footer.
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <!-- EDIT: association name and tagline -->
+          <p class="footer-brand">ULS Steinhagen</p>
+          <p class="footer-tagline">Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col__heading">Über uns</p>
+          <ul role="list">
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="vorstand.html">Vorstand</a></li>
+            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
+            <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col__heading">Inhalte</p>
+          <ul role="list">
+            <li><a href="news.html">News</a></li>
+            <li><a href="presseecho.html">Presseecho</a></li>
+            <li><a href="themen.html">Unsere Themen</a></li>
+            <li><a href="termine.html">Alle Termine</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col__heading">Kontakt</p>
+          <ul role="list">
+            <!-- EDIT: update address and contact details -->
+            <li><!-- Straße Hausnummer --></li>
+            <li><!-- PLZ Steinhagen --></li>
+            <li><a href="mailto:info@uls-steinhagen.de">info@uls-steinhagen.de</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <!-- EDIT: update the year and association name -->
+        <p>&copy; <span id="footer-year">2024</span> ULS Steinhagen e.V. – Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Zurück nach oben">&uarr;</a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

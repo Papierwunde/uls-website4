@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Smartphone scaling -->
+  <!-- SEO | Das zeigt Google bei den Suchergebnissen in der Beschreibung an -->
+  <meta name="description" content="Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. – Wir setzen uns für Natur, Umwelt und eine lebenswerte Gemeinde ein." />
+  <meta name="theme-color" content="#2D5016" /> <!-- Färb die Adressleiste in mobilen Browsern in dunkle Grün ein-->
+  <!-- EDIT: update page title -->
+  <title>ULS Steinhagen – Umwelt &amp; Lebensqualität</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  
+  <!-- ══ SKIP LINK ══════════════════════════════════════ -->
+  <a class="sr-only" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--green-dark);color:#fff;padding:.5rem 1rem;z-index:9999;">Zum Inhalt springen</a>
+
+  <!-- ══════════════════════════════════════════════════
+       NAVBAR
+       ══════════════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="container nav-inner">
+
+      <!-- LOGO ─────────────────────────────────────────
+           Replace the contents of .nav-logo-icon with your
+           own logo (SVG inline or <img>).
+           The text lines next to it can be edited freely.
+      ──────────────────────────────────────────────── -->
+      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <!-- ICON SLOT: place your logo icon here
+               e.g. <img src="images/logo.svg" alt="" />
+               or   <svg viewBox="0 0 24 24">…</svg>     -->
+          <span class="icon-slot" style="width:22px;height:22px;color:white;">
+            <!-- your logo icon -->
+          </span>
+        </div>
+        <div class="nav-logo-text">
+          <span>ULS Steinhagen</span><!-- EDIT -->
+          <span>Umwelt &amp; Lebensqualität</span><!-- EDIT -->
+        </div>
+      </a>
+
+      <!-- Mobile hamburger (JS controlled) -->
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        aria-controls="nav-links"
+        aria-expanded="false"
+        aria-label="Menü öffnen"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Main navigation links ─────────────────────────
+           Add, remove or rename links as needed.
+           "nav-cta" class makes the last link look like a button.
+      ──────────────────────────────────────────────── -->
+      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="news.html">Aktuelles</a>
+        <a href="#events">Termine</a>
+        <a href="themen.html">Unsere Themen</a>
+        <a href="presseecho.html">Presseecho</a>
+        <a href="#contact" class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ MAIN ═══════════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ══════════════════════════════════════════════════
+         HERO
+         ══════════════════════════════════════════════════
+         Background image is set in style.css → .hero-bg.
+         Edit the text below and the buttons freely.
+    ══════════════════════════════════════════════════ -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg" role="img" aria-label="Blick in einen deutschen Laubwald"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <!-- Badge pill above the title (small label) -->
+        <div class="hero-badge" aria-hidden="true">
+          <span class="hero-badge-dot"></span>
+          Aktiv für Steinhagen seit 1991<!-- EDIT -->
+        </div>
+
+        <h1 class="hero-title" id="hero-heading">
+          Natur schützen.<br>
+          <em>Lebensqualität</em><br>
+          gestalten.
+          <!-- EDIT: your headline -->
+        </h1>
+
+        <p class="hero-sub">
+          <!-- EDIT: your sub-headline / intro text -->
+          Der Umweltverein Steinhagen setzt sich seit über 30 Jahren für den Schutz
+          unserer natürlichen Umgebung, eine saubere Gemeinde und eine lebenswerte Zukunft ein.
+        </p>
+
+        <div class="hero-actions">
+          <!-- EDIT: button labels and hrefs -->
+          <a href="#about" class="btn btn-primary">Mehr erfahren</a>
+          <a href="#contact" class="btn btn-outline">Kontakt aufnehmen</a>
+        </div>
+      </div>
+
+      <!-- Animated scroll indicator -->
+      <div class="hero-scroll" aria-hidden="true" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
+        <div class="hero-scroll-line"></div>
+        <span>Scrollen</span>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+         STATS BAR
+         ══════════════════════════════════════════════════
+         Numbers animate on scroll.  Edit data-target (the
+         end value), data-suffix (text after the number)
+         and the label below each counter.
+    ══════════════════════════════════════════════════ -->
+    <section id="stats" aria-label="Verein in Zahlen">
+      <div class="container">
+        <div class="stats-grid">
+          <!-- EDIT: change data-target and label for each stat -->
+          <div>
+            <span class="stat-number" data-target="33" data-suffix="+ Jahre">0 Jahre</span>
+            <span class="stat-label">Engagement für Steinhagen</span>
+          </div>
+          <div>
+            <span class="stat-number" data-target="12" data-suffix="">0</span>
+            <span class="stat-label">Veranstaltungen pro Jahr</span>
+          </div>
+          <div>
+            <span class="stat-number" data-target="7" data-suffix="">0</span>
+            <span class="stat-label">Aktive Themenfelder</span>
+          </div>
+          <div>
+            <span class="stat-number" data-target="1" data-suffix=" Gemeinde">0</span>
+            <span class="stat-label">Steinhagen – unsere Heimat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+         ÜBER UNS – preview (links to ueber-uns.html)
+         ══════════════════════════════════════════════════ -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Image side ─────────────────────────────────
+               Replace the <img> src with your own photo.
+               alt text should describe what is shown.
+          ──────────────────────────────────────────────── -->
+          <div class="about-image-wrap reveal">
+            <img
+              src="images/hero-forest.png"
+              alt="Wald in der Nähe von Steinhagen"<!-- EDIT: descriptive alt text -->
+              loading="lazy"
+            />
+            <!-- Floating badge bottom-right of the image – EDIT text -->
+            <div class="about-badge-float" aria-hidden="true">
+              <strong>e.V.</strong>
+              <span>eingetragener Verein</span>
+            </div>
+          </div>
+
+          <!-- Text side -->
+          <div class="reveal">
+            <span class="section-label">Über uns</span>
+            <h2 class="section-title" id="about-heading">Wir sind der Umweltverein Steinhagen</h2><!-- EDIT -->
+            <div class="divider"></div>
+            <p class="section-intro">
+              <!-- EDIT: short introduction paragraph -->
+              Der Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. (ULS)
+              wurde 1991 gegründet. Wir sind eine gemeinnützige Bürgerinitiative, die aktiv für
+              den Schutz der Natur und eine lebenswerte Gemeinde eintritt.
+            </p>
+
+            <!-- Checklist – add or remove <li> items freely -->
+            <ul class="about-list" aria-label="Unsere Tätigkeiten">
+              <li class="about-list-item">
+                <!-- ICON SLOT: add a small checkmark icon inside the span below -->
+                <span class="about-list-icon" aria-hidden="true"></span>
+                <span>Regelmäßige Informationsveranstaltungen zu aktuellen Umweltthemen</span><!-- EDIT -->
+              </li>
+              <li class="about-list-item">
+                <span class="about-list-icon" aria-hidden="true"></span>
+                <span>Aktive Beteiligung an kommunalpolitischen Entscheidungsprozessen</span><!-- EDIT -->
+              </li>
+              <li class="about-list-item">
+                <span class="about-list-icon" aria-hidden="true"></span>
+                <span>Müllsammelaktionen, Baumpflanzungen und Nisthilfen</span><!-- EDIT -->
+              </li>
+              <li class="about-list-item">
+                <span class="about-list-icon" aria-hidden="true"></span>
+                <span>Förderung innovativer Schulprojekte und Jugendarbeit</span><!-- EDIT -->
+              </li>
+            </ul>
+
+            <!-- Links to subpages -->
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <a href="ueber-uns.html" class="btn btn-primary">Mehr über uns</a>
+              <a href="ueber-uns.html#vorstand" class="btn btn-outline">Vorstand</a>
+              <a href="mitgliedschaft.html" class="btn btn-outline">Mitglied werden</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+         NEWS – preview (3 cards, links to news.html)
+         ══════════════════════════════════════════════════
+         Add or remove .news-card articles as needed.
+         Each card has: tag label, title, excerpt, meta.
+    ══════════════════════════════════════════════════ -->
+    <section id="news" class="section" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom:3.5rem;">
+          <span class="section-label">Aktuelles</span>
+          <h2 class="section-title" id="news-heading">Neuigkeiten &amp; Aktivitäten</h2><!-- EDIT -->
+          <div class="divider" style="margin-inline:auto;"></div>
+          <p class="section-intro">Was wir zuletzt bewegt haben – Projekte, Aktionen und Berichte.</p><!-- EDIT -->
+        </div>
+
+        <div class="news-grid">
+
+          <!-- NEWS CARD ────────────────────────────────
+               Duplicate this <article> block to add more news items.
+               - Replace the <img> src with your photo.
+               - Edit the tag, title, excerpt, and date.
+               - Link card title to a full article page if desired.
+          ──────────────────────────────────────────── -->
+          <article class="news-card reveal" aria-labelledby="news1-title">
+            <!-- IMAGE SLOT: replace src and alt -->
+            <img class="news-card-img" src="images/hero-forest.png" alt="Beschreibung Bild 1" loading="lazy" />
+            <div class="news-card-body">
+              <span class="news-card-tag">Jahresempfang</span><!-- EDIT: category tag -->
+              <h3 class="news-card-title" id="news1-title">Titel des Beitrags</h3><!-- EDIT -->
+              <p class="news-card-excerpt">
+                Kurze Beschreibung des Beitrags – ein bis drei Sätze.<!-- EDIT -->
+              </p>
+              <div class="news-card-meta">
+                <!-- ICON SLOT: small calendar or book icon -->
+                <span class="icon-slot" aria-hidden="true"></span>
+                <span>TT. Monat JJJJ</span><!-- EDIT: date -->
+              </div>
+            </div>
+          </article>
+
+          <!-- Duplicate from here ── -->
+          <article class="news-card reveal" aria-labelledby="news2-title">
+            <img class="news-card-img" src="images/hero-forest.png" alt="Beschreibung Bild 2" loading="lazy" />
+            <div class="news-card-body">
+              <span class="news-card-tag">Schulprojekt</span><!-- EDIT -->
+              <h3 class="news-card-title" id="news2-title">Titel des Beitrags</h3><!-- EDIT -->
+              <p class="news-card-excerpt">Kurze Beschreibung des Beitrags – ein bis drei Sätze.</p><!-- EDIT -->
+              <div class="news-card-meta">
+                <span class="icon-slot" aria-hidden="true"></span>
+                <span>TT. Monat JJJJ</span><!-- EDIT -->
+              </div>
+            </div>
+          </article>
+          <!-- ── to here to add more cards -->
+
+          <article class="news-card reveal" aria-labelledby="news3-title">
+            <img class="news-card-img" src="images/hero-forest.png" alt="Beschreibung Bild 3" loading="lazy" />
+            <div class="news-card-body">
+              <span class="news-card-tag">Artenschutz</span><!-- EDIT -->
+              <h3 class="news-card-title" id="news3-title">Titel des Beitrags</h3><!-- EDIT -->
+              <p class="news-card-excerpt">Kurze Beschreibung des Beitrags – ein bis drei Sätze.</p><!-- EDIT -->
+              <div class="news-card-meta">
+                <span class="icon-slot" aria-hidden="true"></span>
+                <span>TT. Monat JJJJ</span><!-- EDIT -->
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Link to full news page -->
+        <div class="section-more reveal">
+          <a href="news.html" class="btn btn-outline">Alle Neuigkeiten ansehen</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+         TERMINE – preview (4 items, links to termine.html)
+         ══════════════════════════════════════════════════
+         The sticky "next event" card on the right shows the
+         most imminent event.  Edit both the list items and
+         the card.  Add or remove .event-item articles freely.
+    ══════════════════════════════════════════════════ -->
+    <section id="events" class="section" aria-labelledby="events-heading">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:3rem;">
+          <span class="section-label">Kalender</span>
+          <h2 class="section-title" id="events-heading">Kommende Termine</h2><!-- EDIT -->
+          <div class="divider"></div>
+          <p class="section-intro">Alle Veranstaltungen des Vereins – Vorträge, Mitgliederversammlungen und Aktionen.</p><!-- EDIT -->
+        </div>
+
+        <div class="events-layout">
+
+          <!-- ── Event list ──────────────────────────────
+               Duplicate an .event-item to add more events.
+               Date box: use day number + month abbreviation,
+               or a word like "Frühjahr" / "März" if no exact
+               date is known yet.
+          ──────────────────────────────────────────────── -->
+          <div>
+
+            <!-- EVENT ITEM ─ duplicate to add more events -->
+            <article class="event-item reveal" aria-labelledby="ev1-title">
+              <div class="event-date-box" aria-label="18. Januar">
+                <span class="event-day">18</span><!-- EDIT: day or short word -->
+                <span class="event-month">Jan</span><!-- EDIT: month abbreviation -->
+              </div>
+              <div class="event-info">
+                <h4 id="ev1-title">Jahresempfang 2026</h4><!-- EDIT -->
+                <p>Vortrag: „Walderlebnispfad Ascheloh" – Hartmut Lüker, BUND Halle/W.</p><!-- EDIT -->
+                <div class="event-meta-row">
+                  <span class="event-tag">
+                    <!-- ICON SLOT: small location pin icon -->
+                    <span class="icon-slot" aria-hidden="true"></span>
+                    Alte Feuerwehr Amshausen<!-- EDIT: location -->
+                  </span>
+                  <span class="event-tag">
+                    <!-- ICON SLOT: small clock icon -->
+                    <span class="icon-slot" aria-hidden="true"></span>
+                    19:00 Uhr<!-- EDIT: time -->
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="event-item reveal" aria-labelledby="ev2-title">
+              <div class="event-date-box" aria-label="Frühjahr 2026">
+                <span class="event-day">Fr</span><!-- EDIT -->
+                <span class="event-month">2026</span><!-- EDIT -->
+              </div>
+              <div class="event-info">
+                <h4 id="ev2-title">Jahreshauptversammlung mit Vortrag</h4><!-- EDIT -->
+                <p>Referentin: Elke Schwarzer – „Leben in der Laubstreu"</p><!-- EDIT -->
+                <div class="event-meta-row">
+                  <span class="event-tag">
+                    <span class="icon-slot" aria-hidden="true"></span>
+                    Mitgliederveranstaltung<!-- EDIT -->
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="event-item reveal" aria-labelledby="ev3-title">
+              <div class="event-date-box" aria-label="März 2026">
+                <span class="event-day">März</span><!-- EDIT -->
+                <span class="event-month">2026</span><!-- EDIT -->
+              </div>
+              <div class="event-info">
+                <h4 id="ev3-title">Müllsammelaktion Steinhagen</h4><!-- EDIT -->
+                <p>Gemeinsam die Natur von Müll befreien – alle sind willkommen!</p><!-- EDIT -->
+                <div class="event-meta-row">
+                  <span class="event-tag">
+                    <span class="icon-slot" aria-hidden="true"></span>
+                    Aktion<!-- EDIT -->
+                  </span>
+                  <span class="event-tag">
+                    <span class="icon-slot" aria-hidden="true"></span>
+                    Steinhagen<!-- EDIT -->
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="event-item reveal" aria-labelledby="ev4-title">
+              <div class="event-date-box" aria-label="Sommer 2026">
+                <span class="event-day">Sommer</span><!-- EDIT -->
+                <span class="event-month">2026</span><!-- EDIT -->
+              </div>
+              <div class="event-info">
+                <h4 id="ev4-title">Stadtradeln</h4><!-- EDIT -->
+                <p>Der Verein nimmt wieder am bundesweiten Stadtradeln-Wettbewerb teil.</p><!-- EDIT -->
+                <div class="event-meta-row">
+                  <span class="event-tag">
+                    <span class="icon-slot" aria-hidden="true"></span>
+                    Radeln<!-- EDIT -->
+                  </span>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- end event list -->
+
+          <!-- ── Sticky next-event card (right column) ──
+               Shows the single most important / next event.
+               Edit this block to match the first event above.
+          ──────────────────────────────────────────────── -->
+          <aside class="next-event-card reveal" aria-labelledby="next-ev-title">
+            <p class="next-event-label">Nächste Veranstaltung</p>
+            <p class="next-event-date">18. Januar 2026</p><!-- EDIT -->
+            <h3 class="next-event-title" id="next-ev-title">Jahresempfang 2026</h3><!-- EDIT -->
+            <p class="next-event-desc">
+              <!-- EDIT: brief description of the next event -->
+              Jahresempfang mit Vorstellung des Walderlebnispfads Ascheloh durch
+              Hartmut Lüker vom BUND Halle/W. – alle Interessierten herzlich willkommen!
+            </p>
+            <a href="#contact" class="btn btn-outline">Einladung anfordern</a><!-- EDIT href -->
+          </aside>
+
+        </div><!-- end events-layout -->
+
+        <!-- Link to full events page -->
+        <div class="section-more reveal">
+          <a href="termine.html" class="btn btn-outline">Alle Termine ansehen</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+         UNSERE THEMEN – preview (topic cards, links to themen.html)
+         ══════════════════════════════════════════════════
+         Each .topic-card links directly to the matching tab
+         on themen.html using a URL hash (e.g. themen.html#naturschutz).
+         Add or remove cards as needed – the grid is auto-responsive.
+    ══════════════════════════════════════════════════ -->
+    <section id="topics" class="section" aria-labelledby="topics-heading">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom:3.5rem;">
+          <span class="section-label">Themen</span>
+          <h2 class="section-title" id="topics-heading">Unsere Themenfelder</h2><!-- EDIT -->
+          <div class="divider" style="margin-inline:auto;"></div>
+          <p class="section-intro">Diese Bereiche beschäftigen uns am meisten – hier setzen wir uns aktiv ein.</p><!-- EDIT -->
+        </div>
+
+        <div class="topics-grid">
+
+          <!-- TOPIC CARD ─────────────────────────────────
+               href points to the matching tab on themen.html.
+               Add a .topic-icon span inside the icon div,
+               then paste your own icon markup into the slot.
+               Duplicate this block to add more topic cards.
+          ──────────────────────────────────────────────── -->
+          <a class="topic-card reveal" href="themen.html#naturschutz">
+            <div class="topic-icon" aria-hidden="true">
+              <!-- ICON SLOT: your Naturschutz icon (26 × 26 px) -->
+              <span class="icon-slot" style="width:26px;height:26px;"></span>
+            </div>
+            <h4>Naturschutz</h4><!-- EDIT -->
+            <p>Schutz heimischer Tier- und Pflanzenarten, Nisthilfen und Biotoppflege.</p><!-- EDIT -->
+          </a>
+
+          <a class="topic-card reveal" href="themen.html#laerm-verkehr">
+            <div class="topic-icon" aria-hidden="true">
+              <!-- ICON SLOT: your Lärm & Verkehr icon -->
+              <span class="icon-slot" style="width:26px;height:26px;"></span>
+            </div>
+            <h4>Lärm &amp; Verkehr</h4><!-- EDIT -->
+            <p>Lärmaktionsplan, sichere Radwege und lebenswerte Verkehrsinfrastruktur.</p><!-- EDIT -->
+          </a>
+
+          <a class="topic-card reveal" href="themen.html#klimaschutz">
+            <div class="topic-icon" aria-hidden="true">
+              <!-- ICON SLOT: your Klimaschutz icon -->
+              <span class="icon-slot" style="width:26px;height:26px;"></span>
+            </div>
+            <h4>Klimaschutz</h4><!-- EDIT -->
+            <p>Klimaneutralität, PFAS-Chemikalien und regionale Klimawandelfolgen.</p><!-- EDIT -->
+          </a>
+
+          <a class="topic-card reveal" href="themen.html#gewerbe-planung">
+            <div class="topic-icon" aria-hidden="true">
+              <!-- ICON SLOT: your Gewerbe icon -->
+              <span class="icon-slot" style="width:26px;height:26px;"></span>
+            </div>
+            <h4>Gewerbe &amp; Planung</h4><!-- EDIT -->
+            <p>Kritische Begleitung von Bauvorhaben mit Umweltrelevanz.</p><!-- EDIT -->
+          </a>
+
+          <a class="topic-card reveal" href="themen.html#bildung">
+            <div class="topic-icon" aria-hidden="true">
+              <!-- ICON SLOT: your Bildung icon -->
+              <span class="icon-slot" style="width:26px;height:26px;"></span>
+            </div>
+            <h4>Bildung &amp; Schule</h4><!-- EDIT -->
+            <p>Umweltprojekte an Schulen, Zusammenarbeit mit Lehrenden.</p><!-- EDIT -->
+          </a>
+
+          <a class="topic-card reveal" href="themen.html#hochwasser">
+            <div class="topic-icon" aria-hidden="true">
+              <!-- ICON SLOT: your Hochwasser icon -->
+              <span class="icon-slot" style="width:26px;height:26px;"></span>
+            </div>
+            <h4>Hochwasser &amp; Wasser</h4><!-- EDIT -->
+            <p>Hochwasserschutz, Regenrückhaltung und gesunde Wasserversorgung.</p><!-- EDIT -->
+          </a>
+
+        </div>
+
+        <!-- Link to full topics page -->
+        <div class="section-more reveal">
+          <a href="themen.html" class="btn btn-outline">Alle Themen ansehen</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+         PRESSEECHO – preview (3 press cards, links to presseecho.html)
+         ══════════════════════════════════════════════════ -->
+    <section id="presseecho" class="section" aria-labelledby="presse-heading">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom:3.5rem;">
+          <span class="section-label">Presse</span>
+          <h2 class="section-title" id="presse-heading">Presseecho</h2><!-- EDIT -->
+          <div class="divider" style="margin-inline:auto;"></div>
+          <p class="section-intro">Was die lokale Presse über uns schreibt – Berichte und Artikel.</p><!-- EDIT -->
+        </div>
+
+        <div class="press-grid">
+
+          <!-- PRESS CARD ──────────────────────────────────
+               Replace the <img> with your newspaper scan/photo.
+               Duplicate this block to add more press items.
+          ──────────────────────────────────────────────── -->
+          <article class="press-card reveal">
+            <!-- IMAGE SLOT: newspaper scan or article photo -->
+            <img class="press-card-img" src="images/hero-forest.png" alt="Zeitungsartikel Beschreibung" loading="lazy" /><!-- EDIT src + alt -->
+            <div class="press-card-body">
+              <p class="press-card-source">Quelle: Neue Westfälische</p><!-- EDIT -->
+              <h4 class="press-card-title">Titel des Presseartikels</h4><!-- EDIT -->
+              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
+            </div>
+          </article>
+
+          <!-- Duplicate from here ── -->
+          <article class="press-card reveal">
+            <img class="press-card-img" src="images/hero-forest.png" alt="Zeitungsartikel Beschreibung" loading="lazy" /><!-- EDIT -->
+            <div class="press-card-body">
+              <p class="press-card-source">Quelle: Westfalen-Blatt</p><!-- EDIT -->
+              <h4 class="press-card-title">Titel des Presseartikels</h4><!-- EDIT -->
+              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
+            </div>
+          </article>
+          <!-- ── to here -->
+
+          <article class="press-card reveal">
+            <img class="press-card-img" src="images/hero-forest.png" alt="Zeitungsartikel Beschreibung" loading="lazy" /><!-- EDIT -->
+            <div class="press-card-body">
+              <p class="press-card-source">Quelle: Lokalzeitung</p><!-- EDIT -->
+              <h4 class="press-card-title">Titel des Presseartikels</h4><!-- EDIT -->
+              <p class="press-card-date">TT. Monat JJJJ</p><!-- EDIT -->
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Link to full press page -->
+        <div class="section-more reveal">
+          <a href="presseecho.html" class="btn btn-outline">Alle Pressebeiträge ansehen</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+         KONTAKT
+         ══════════════════════════════════════════════════
+         The form uses a mailto: fallback (no server needed).
+         See main.js for the submit handler.
+    ══════════════════════════════════════════════════ -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Left: contact info -->
+          <div class="reveal">
+            <span class="section-label">Kontakt</span>
+            <h2 class="section-title" id="contact-heading">Sprechen Sie uns an</h2><!-- EDIT -->
+            <div class="divider"></div>
+            <p class="section-intro">
+              <!-- EDIT: intro text -->
+              Sie möchten Mitglied werden, eine Frage stellen oder an einer Veranstaltung
+              teilnehmen? Wir freuen uns auf Ihre Nachricht!
+            </p>
+
+            <div class="contact-info-block">
+
+              <!-- INFO ITEM ──────────────────────────────
+                   Duplicate to add more contact details.
+                   Add your icon inside .contact-info-icon.
+              ──────────────────────────────────────────── -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <!-- ICON SLOT: location pin icon -->
+                  <span class="icon-slot" style="width:20px;height:20px;color:var(--green-dark);"></span>
+                </div>
+                <div class="contact-info-text">
+                  <strong>Adresse</strong><!-- EDIT -->
+                  <span>Am Pulverbach 15a, 33803 Steinhagen</span><!-- EDIT -->
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <!-- ICON SLOT: phone icon -->
+                  <span class="icon-slot" style="width:20px;height:20px;color:var(--green-dark);"></span>
+                </div>
+                <div class="contact-info-text">
+                  <strong>Telefon</strong><!-- EDIT -->
+                  <span><a href="tel:+4952048911">05204 89118</a></span><!-- EDIT -->
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <!-- ICON SLOT: envelope / email icon -->
+                  <span class="icon-slot" style="width:20px;height:20px;color:var(--green-dark);"></span>
+                </div>
+                <div class="contact-info-text">
+                  <strong>E-Mail</strong><!-- EDIT -->
+                  <span><a href="mailto:umweltverein@uls-steinhagen.de">umweltverein@uls-steinhagen.de</a></span><!-- EDIT -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: contact form -->
+          <div class="reveal">
+            <form id="contact-form" class="contact-form" novalidate aria-label="Kontaktformular">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" placeholder="Max Mustermann" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="email">E-Mail *</label>
+                  <input type="email" id="email" name="email" placeholder="max@beispiel.de" required autocomplete="email" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefon (optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="05204 …" autocomplete="tel" />
+              </div>
+
+              <!-- EDIT: add or remove <option> entries as needed -->
+              <div class="form-group">
+                <label for="subject">Betreff</label>
+                <select id="subject" name="subject">
+                  <option value="">Bitte wählen …</option>
+                  <option value="mitgliedschaft">Mitgliedschaft</option>
+                  <option value="veranstaltung">Veranstaltung</option>
+                  <option value="thema">Umweltthema melden</option>
+                  <option value="sonstiges">Sonstiges</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Ihre Nachricht *</label>
+                <textarea id="message" name="message" placeholder="Schreiben Sie uns …" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit">
+                <!-- ICON SLOT: send arrow icon (optional) -->
+                <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
+                Nachricht senden<!-- EDIT -->
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- end #main -->
+
+
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════
+       Add or remove columns / links freely.
+       Keep the footer-brand column as the first column.
+  ══════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite" style="color:white;">
+            <div class="nav-logo-icon" aria-hidden="true">
+              <!-- ICON SLOT: same logo as in navbar -->
+              <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+            </div>
+            <div class="nav-logo-text" style="color:white;">
+              <span>ULS Steinhagen</span><!-- EDIT -->
+              <span>Umwelt &amp; Lebensqualität</span><!-- EDIT -->
+            </div>
+          </a>
+          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. – gegründet 1991.</p><!-- EDIT -->
+        </div>
+
+        <!-- Navigation column – EDIT links -->
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="news.html">Aktuelles</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="themen.html">Unsere Themen</a></li>
+            <li><a href="presseecho.html">Presseecho</a></li>
+          </ul>
+        </div>
+
+        <!-- Über uns column – EDIT links -->
+        <div class="footer-col">
+          <h5>Über uns</h5>
+          <ul>
+            <li><a href="ueber-uns.html">Zum Verein</a></li>
+            <li><a href="ueber-uns.html#vorstand">Vorstand</a></li>
+            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
+            <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontakt column -->
+        <div class="footer-col">
+          <h5>Kontakt</h5>
+          <ul>
+            <li><a href="mailto:umweltverein@uls-steinhagen.de">E-Mail schreiben</a></li><!-- EDIT -->
+            <li><a href="tel:+4952048911">05204 89118</a></li><!-- EDIT -->
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span><!-- EDIT year -->
+        <div style="display:flex;gap:1.25rem;">
+          <a href="impressum.html">Impressum</a>
+          <a href="impressum.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back-to-top button -->
+  <button id="back-to-top" aria-label="Zurück nach oben">
+    <!-- ICON SLOT: upward arrow icon -->
+    <span class="icon-slot" aria-hidden="true" style="width:18px;height:18px;color:white;"></span>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

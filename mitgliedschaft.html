@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mitgliedschaft – ULS Steinhagen</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+    NAVIGATION
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-container" role="navigation" aria-label="Hauptnavigation">
+
+      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
+        <span class="icon-slot icon-slot--logo" aria-hidden="true"></span>
+        <span class="nav-logo-text">ULS Steinhagen</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="index.html#termine" class="nav-link">Termine</a></li>
+        <li><a href="news.html" class="nav-link">News</a></li>
+        <li><a href="presseecho.html" class="nav-link">Presseecho</a></li>
+        <li class="nav-item--active"><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+        <li><a href="themen.html" class="nav-link">Unsere Themen</a></li>
+        <li><a href="index.html#kontakt" class="nav-link nav-link--cta">Kontakt</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- ============================================================
+    PAGE HERO
+  ============================================================ -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Startseite</a>
+        <span aria-hidden="true">/</span>
+        <a href="ueber-uns.html">Über uns</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Mitgliedschaft</span>
+      </nav>
+      <h1 class="page-hero__title">Mitglied werden</h1>
+      <!-- EDIT: short subtitle for this page -->
+      <p class="page-hero__subtitle">Gemeinsam für Steinhagen</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    MAIN CONTENT
+  ============================================================ -->
+  <main id="main-content">
+
+    <!-- ============================================================
+      INTRO TEXT
+    ============================================================ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <!-- EDIT: replace with your own intro paragraph -->
+        <p class="lead-text">
+          Werden Sie Mitglied im ULS Steinhagen e.V. und unterstützen Sie unsere Arbeit
+          für Umwelt und Lebensqualität in unserer Gemeinde.
+        </p>
+        <!-- EDIT: add further text paragraphs as needed -->
+        <p><!-- weiterer Einleitungstext hier --></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      MEMBERSHIP BENEFITS
+      HOW TO EDIT:
+        - Change the heading and description in each .benefit-item.
+        - Add more .benefit-item blocks as needed.
+        - Remove the icon-slot and add your own icon inside .benefit-item__icon.
+    ============================================================ -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section-heading section-heading--centered">Was bietet eine Mitgliedschaft?</h2>
+
+        <div class="benefits-grid">
+
+          <!-- BENEFIT 1 -->
+          <div class="benefit-item">
+            <div class="benefit-item__icon">
+              <!-- ICON SLOT: replace with your own icon.
+                   Example: <img src="images/icons/icon-natur.svg" alt="" aria-hidden="true" width="40" height="40" />
+                   Recommended size: 40×40 px -->
+              <span class="icon-slot icon-slot--sm" aria-hidden="true"></span>
+            </div>
+            <!-- EDIT: benefit title -->
+            <h3 class="benefit-item__title">Vorteil 1</h3>
+            <!-- EDIT: short description -->
+            <p class="benefit-item__desc"><!-- Beschreibung des Vorteils hier --></p>
+          </div>
+
+          <!-- BENEFIT 2 -->
+          <div class="benefit-item">
+            <div class="benefit-item__icon">
+              <span class="icon-slot icon-slot--sm" aria-hidden="true"></span>
+            </div>
+            <h3 class="benefit-item__title">Vorteil 2</h3>
+            <p class="benefit-item__desc"><!-- Beschreibung des Vorteils hier --></p>
+          </div>
+
+          <!-- BENEFIT 3 -->
+          <div class="benefit-item">
+            <div class="benefit-item__icon">
+              <span class="icon-slot icon-slot--sm" aria-hidden="true"></span>
+            </div>
+            <h3 class="benefit-item__title">Vorteil 3</h3>
+            <p class="benefit-item__desc"><!-- Beschreibung des Vorteils hier --></p>
+          </div>
+
+          <!-- BENEFIT 4 -->
+          <div class="benefit-item">
+            <div class="benefit-item__icon">
+              <span class="icon-slot icon-slot--sm" aria-hidden="true"></span>
+            </div>
+            <h3 class="benefit-item__title">Vorteil 4</h3>
+            <p class="benefit-item__desc"><!-- Beschreibung des Vorteils hier --></p>
+          </div>
+
+          <!-- ADD MORE: copy a .benefit-item block above -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      BEITRÄGE / FEES
+      HOW TO EDIT: update amounts, labels, and notes as needed.
+      HOW TO REMOVE: delete this entire <section> if you don't list fees publicly.
+    ============================================================ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <h2 class="section-heading">Mitgliedsbeiträge</h2>
+
+        <table class="fees-table">
+          <thead>
+            <tr>
+              <th scope="col">Kategorie</th>
+              <th scope="col">Jahresbeitrag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- EDIT: update each row with your actual fee categories and amounts -->
+            <tr>
+              <td>Einzelmitglied</td>
+              <td><!-- z.B. 20,00 € --></td>
+            </tr>
+            <tr>
+              <td>Familie</td>
+              <td><!-- z.B. 30,00 € --></td>
+            </tr>
+            <tr>
+              <td>Ermäßigt (Schüler/Studenten/Rentner)</td>
+              <td><!-- z.B. 10,00 € --></td>
+            </tr>
+            <tr>
+              <td>Juristische Person / Firma</td>
+              <td><!-- z.B. 50,00 € --></td>
+            </tr>
+            <!-- ADD MORE: copy a <tr> row above -->
+          </tbody>
+        </table>
+
+        <!-- EDIT: notes about fees, SEPA, or payment methods -->
+        <p class="fees-note"><!-- Hinweis zum Zahlungsweg, SEPA-Lastschrift o.Ä. --></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      BEITRITTSFORMULAR / DOWNLOAD
+      HOW TO EDIT:
+        - Point the <a> href to your own PDF application form.
+        - Or embed an online form here by replacing the .download-block.
+      HOW TO REMOVE: delete the entire <section> if not needed.
+    ============================================================ -->
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <h2 class="section-heading">Beitrittsformular</h2>
+        <!-- EDIT: description text -->
+        <p><!-- Kurzer Text zum Beitrittsformular --></p>
+
+        <div class="download-block">
+          <!-- ICON SLOT: document/PDF icon -->
+          <span class="icon-slot icon-slot--sm" aria-hidden="true"></span>
+          <div class="download-block__info">
+            <!-- EDIT: label for the download link -->
+            <p class="download-block__label">Beitrittserklärung (PDF)</p>
+            <!-- EDIT: update href to point to your PDF file, e.g. "downloads/beitrittserklaerung.pdf" -->
+            <a href="#" class="btn btn--primary" download>
+              Formular herunterladen
+            </a>
+          </div>
+        </div>
+
+        <!-- OPTIONAL: online contact alternative -->
+        <p class="fees-note">
+          Oder senden Sie uns eine E-Mail an
+          <!-- EDIT: replace with actual email -->
+          <a href="mailto:info@uls-steinhagen.de">info@uls-steinhagen.de</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      BACK-LINK
+    ============================================================ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <a href="ueber-uns.html" class="btn btn--outline">&larr; Zurück zu Über uns</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+    FOOTER
+    Keep in sync with index.html footer.
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <p class="footer-brand">ULS Steinhagen</p>
+          <p class="footer-tagline">Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col__heading">Über uns</p>
+          <ul role="list">
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="vorstand.html">Vorstand</a></li>
+            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
+            <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col__heading">Inhalte</p>
+          <ul role="list">
+            <li><a href="news.html">News</a></li>
+            <li><a href="presseecho.html">Presseecho</a></li>
+            <li><a href="themen.html">Unsere Themen</a></li>
+            <li><a href="termine.html">Alle Termine</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col__heading">Kontakt</p>
+          <ul role="list">
+            <li><!-- Straße Hausnummer --></li>
+            <li><!-- PLZ Steinhagen --></li>
+            <li><a href="mailto:info@uls-steinhagen.de">info@uls-steinhagen.de</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year">2024</span> ULS Steinhagen e.V. – Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Zurück nach oben">&uarr;</a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

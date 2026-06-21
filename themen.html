@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Die Themenfelder des ULS Steinhagen – Naturschutz, Klimaschutz, Lärm &amp; Verkehr und mehr." /><!-- EDIT -->
+  <meta name="theme-color" content="#2D5016" />
+  <title>Unsere Themen – ULS Steinhagen</title><!-- EDIT -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+        </div>
+        <div class="nav-logo-text">
+          <span>ULS Steinhagen</span>
+          <span>Umwelt &amp; Lebensqualität</span>
+        </div>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="news.html">Aktuelles</a>
+        <a href="termine.html">Termine</a>
+        <a href="themen.html" aria-current="page">Unsere Themen</a>
+        <a href="presseecho.html">Presseecho</a>
+        <a href="index.html#contact" class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page hero -->
+    <div class="page-hero">
+      <div class="container">
+        <span class="section-label" style="color:var(--green-light);">Themen</span>
+        <h1>Unsere Themenfelder</h1><!-- EDIT -->
+        <p>Diese Bereiche beschäftigen uns – hier setzen wir uns aktiv ein.</p><!-- EDIT -->
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════
+         TABS – one tab per topic
+         ══════════════════════════════════════════════════
+         STRUCTURE:
+           .tabs-nav          → the row of tab buttons
+             .tab-btn         → one button per topic
+               data-tab="id"  → links to the matching panel
+           .tab-panel         → the content area (hidden by default)
+             id="id"          → must match data-tab above
+
+         HOW TO ADD A TOPIC:
+         1. Add a new <button class="tab-btn"> in .tabs-nav.
+            Set data-tab="your-new-id".
+         2. Add a matching <section class="tab-panel" id="your-new-id">.
+         3. Fill the panel with .topic-content (see below).
+
+         HOW TO LINK FROM index.html:
+           <a href="themen.html#naturschutz"> opens this page
+           and JS (main.js) automatically activates the matching tab.
+
+         PANEL CONTENT STRUCTURE:
+           .topic-content
+             .topic-content-text  → text column (h3, p, ul)
+             <img .topic-content-img>  → photo column
+           Below that: any extra blocks (accordion items, more images, etc.)
+    ══════════════════════════════════════════════════ -->
+    <section class="page-content bg-white" aria-label="Themen">
+      <div class="container">
+
+        <!-- ── Tab navigation ─────────────────────────── -->
+        <nav class="tabs-nav" role="tablist" aria-label="Themenfelder">
+
+          <!-- EDIT: tab label and data-tab value (must match panel id below) -->
+          <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="naturschutz"    data-tab="naturschutz">
+            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span><!-- ICON SLOT -->
+            Naturschutz
+          </button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="laerm-verkehr"  data-tab="laerm-verkehr">
+            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
+            Lärm &amp; Verkehr
+          </button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="klimaschutz"    data-tab="klimaschutz">
+            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
+            Klimaschutz
+          </button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="gewerbe-planung" data-tab="gewerbe-planung">
+            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
+            Gewerbe &amp; Planung
+          </button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="bildung"        data-tab="bildung">
+            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
+            Bildung &amp; Schule
+          </button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="hochwasser"     data-tab="hochwasser">
+            <span class="icon-slot" style="width:16px;height:16px;" aria-hidden="true"></span>
+            Hochwasser &amp; Wasser
+          </button>
+          <!-- ADD MORE TABs HERE – copy a button and a panel below -->
+
+        </nav><!-- end .tabs-nav -->
+
+        <!-- ══════════════════════════════════════════════
+             TAB PANELS
+             ══════════════════════════════════════════════
+             Each panel is shown/hidden by JS.
+             The first panel has class="tab-panel active".
+        ══════════════════════════════════════════════ -->
+
+        <!-- ── PANEL: Naturschutz ──────────────────────── -->
+        <section class="tab-panel active" id="naturschutz" role="tabpanel" aria-labelledby="tab-naturschutz">
+          <div class="topic-content">
+            <div class="topic-content-text">
+              <h3>Naturschutz</h3><!-- EDIT -->
+              <p>
+                <!-- EDIT: intro paragraph for this topic -->
+                Hier steht ein kurzer einleitender Text zum Thema Naturschutz.
+                Beschreiben Sie, was der Verein konkret tut und welche Ziele verfolgt werden.
+              </p>
+              <p>
+                <!-- EDIT: second paragraph (optional – delete if not needed) -->
+                Weiterer Absatz mit Hintergrundinformationen oder konkreten Projekten.
+              </p>
+              <!-- EDIT: bullet list – add or remove items as needed -->
+              <ul>
+                <li>Nisthilfen für heimische Vogelarten</li><!-- EDIT -->
+                <li>Baumpflanzungen und Biotoppflege</li><!-- EDIT -->
+                <li>Artenschutz-Projekte in der Gemeinde</li><!-- EDIT -->
+              </ul>
+            </div>
+            <!-- IMAGE SLOT: topic photo (right column on desktop) -->
+            <img
+              class="topic-content-img"
+              src="images/hero-forest.png"
+              alt="Foto zum Thema Naturschutz"<!-- EDIT: descriptive alt text -->
+              loading="lazy"
+            /><!-- EDIT src -->
+          </div>
+          <!-- Optional: add more content blocks below the two-column layout -->
+        </section>
+
+        <!-- ── PANEL: Lärm & Verkehr ───────────────────── -->
+        <section class="tab-panel" id="laerm-verkehr" role="tabpanel" aria-labelledby="tab-laerm-verkehr">
+          <div class="topic-content">
+            <div class="topic-content-text">
+              <h3>Lärm &amp; Verkehr</h3><!-- EDIT -->
+              <p>
+                Hier steht ein kurzer einleitender Text zum Thema Lärm &amp; Verkehr.<!-- EDIT -->
+              </p>
+              <ul>
+                <li>Lärmaktionsplan Steinhagen</li><!-- EDIT -->
+                <li>Sichere Radwege in der Gemeinde</li><!-- EDIT -->
+                <li>Beteiligung an Planungsverfahren</li><!-- EDIT -->
+              </ul>
+            </div>
+            <img class="topic-content-img" src="images/hero-forest.png" alt="Foto zum Thema Lärm und Verkehr" loading="lazy" /><!-- EDIT -->
+          </div>
+        </section>
+
+        <!-- ── PANEL: Klimaschutz ──────────────────────── -->
+        <section class="tab-panel" id="klimaschutz" role="tabpanel" aria-labelledby="tab-klimaschutz">
+          <div class="topic-content">
+            <div class="topic-content-text">
+              <h3>Klimaschutz</h3><!-- EDIT -->
+              <p>
+                Hier steht ein kurzer einleitender Text zum Thema Klimaschutz.<!-- EDIT -->
+              </p>
+              <ul>
+                <li>Informationsveranstaltungen zu Klimaneutralität</li><!-- EDIT -->
+                <li>PFAS-Chemikalien und ihre Auswirkungen</li><!-- EDIT -->
+                <li>Klimawandelfolgen in der Region</li><!-- EDIT -->
+              </ul>
+            </div>
+            <img class="topic-content-img" src="images/hero-forest.png" alt="Foto zum Thema Klimaschutz" loading="lazy" /><!-- EDIT -->
+          </div>
+        </section>
+
+        <!-- ── PANEL: Gewerbe & Planung ────────────────── -->
+        <section class="tab-panel" id="gewerbe-planung" role="tabpanel" aria-labelledby="tab-gewerbe-planung">
+          <div class="topic-content">
+            <div class="topic-content-text">
+              <h3>Gewerbe &amp; Planung</h3><!-- EDIT -->
+              <p>
+                Hier steht ein kurzer einleitender Text zum Thema Gewerbe &amp; Planung.<!-- EDIT -->
+              </p>
+              <ul>
+                <li>Begleitung des Gewerbeparks Waldbadstraße</li><!-- EDIT -->
+                <li>Kritische Prüfung von Bebauungsplänen</li><!-- EDIT -->
+                <li>Bürgerbeteiligung bei Planungsverfahren</li><!-- EDIT -->
+              </ul>
+            </div>
+            <img class="topic-content-img" src="images/hero-forest.png" alt="Foto zum Thema Gewerbe und Planung" loading="lazy" /><!-- EDIT -->
+          </div>
+        </section>
+
+        <!-- ── PANEL: Bildung & Schule ─────────────────── -->
+        <section class="tab-panel" id="bildung" role="tabpanel" aria-labelledby="tab-bildung">
+          <div class="topic-content">
+            <div class="topic-content-text">
+              <h3>Bildung &amp; Schule</h3><!-- EDIT -->
+              <p>
+                Hier steht ein kurzer einleitender Text zum Thema Bildung &amp; Schule.<!-- EDIT -->
+              </p>
+              <ul>
+                <li>Schulprojekte mit Umweltbezug</li><!-- EDIT -->
+                <li>Zusammenarbeit mit Lehrenden</li><!-- EDIT -->
+                <li>Förderung von Jugendprojekten</li><!-- EDIT -->
+              </ul>
+            </div>
+            <img class="topic-content-img" src="images/hero-forest.png" alt="Foto zum Thema Bildung" loading="lazy" /><!-- EDIT -->
+          </div>
+        </section>
+
+        <!-- ── PANEL: Hochwasser & Wasser ─────────────── -->
+        <section class="tab-panel" id="hochwasser" role="tabpanel" aria-labelledby="tab-hochwasser">
+          <div class="topic-content">
+            <div class="topic-content-text">
+              <h3>Hochwasser &amp; Wasser</h3><!-- EDIT -->
+              <p>
+                Hier steht ein kurzer einleitender Text zum Thema Hochwasser &amp; Wasser.<!-- EDIT -->
+              </p>
+              <ul>
+                <li>Nachhaltiger Hochwasserschutz</li><!-- EDIT -->
+                <li>Regenrückhaltung und Versickerung</li><!-- EDIT -->
+                <li>Saubere Wasserversorgung in Steinhagen</li><!-- EDIT -->
+              </ul>
+            </div>
+            <img class="topic-content-img" src="images/hero-forest.png" alt="Foto zum Thema Hochwasser und Wasser" loading="lazy" /><!-- EDIT -->
+          </div>
+        </section>
+
+      </div><!-- end .container -->
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite" style="color:white;">
+            <div class="nav-logo-icon" aria-hidden="true">
+              <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+            </div>
+            <div class="nav-logo-text" style="color:white;">
+              <span>ULS Steinhagen</span>
+              <span>Umwelt &amp; Lebensqualität</span>
+            </div>
+          </a>
+          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. – gegründet 1991.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="news.html">Aktuelles</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="themen.html">Unsere Themen</a></li>
+            <li><a href="presseecho.html">Presseecho</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Über uns</h5>
+          <ul>
+            <li><a href="ueber-uns.html">Zum Verein</a></li>
+            <li><a href="ueber-uns.html#vorstand">Vorstand</a></li>
+            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
+            <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5>
+          <ul>
+            <li><a href="mailto:umweltverein@uls-steinhagen.de">E-Mail schreiben</a></li>
+            <li><a href="tel:+4952048911">05204 89118</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
+        <div style="display:flex;gap:1.25rem;">
+          <a href="impressum.html">Impressum</a>
+          <a href="impressum.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Zurück nach oben">
+    <span class="icon-slot" aria-hidden="true" style="width:18px;height:18px;color:white;"></span>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
