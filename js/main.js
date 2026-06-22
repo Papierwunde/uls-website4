@@ -175,18 +175,26 @@
   if (!form) return;
 
   form.addEventListener("submit", function (e) {
+    // 1. Zuerst prüfen, ob alle Pflichtfelder korrekt ausgefüllt sind
+    if (!form.checkValidity()) {
+      // Wenn Felder fehlen, stoppen wir hier NICHT. 
+      // Wir lassen dem Browser den Vortritt, damit er seine roten Standard-Warnungen anzeigt.
+      return; 
+    }
+
+    // 2. Wenn alles korrekt ist, verhindern wir das Neuladen der Seite
     e.preventDefault();
 
-    // 1. Visuelles Feedback: Button sperren
+    // 3. Visuelles Feedback: Button sperren
     var btn = form.querySelector(".form-submit");
     var originalText = btn.textContent;
     btn.textContent = "Nachricht wird gesendet …";
     btn.disabled = true;
 
-    // 2. Daten einsammeln
+    // 4. Daten einsammeln
     var formData = new FormData(form);
 
-    // 3. Daten per AJAX (Fetch) im Hintergrund an Formbee senden
+    // 5. Daten im Hintergrund an Formbee senden
     fetch(form.action, {
       method: form.method,
       body: formData,
@@ -194,31 +202,29 @@
     })
     .then(function(response) {
       if (response.ok) {
-        // Erfolgsfall: Formular zurücksetzen und Erfolg melden
+        // Erfolgsfall: Formular leeren
         btn.textContent = "Erfolgreich gesendet!";
-        form.reset(); // Leert alle Eingabefelder
+        form.reset(); 
         alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
         
-        // Nach 4 Sekunden den Button wieder zurücksetzen
         setTimeout(function () {
           btn.textContent = originalText;
           btn.disabled = false;
         }, 4000);
       } else {
-        // Fehler vom Server (z. B. falsches Token)
-        alert("Fehler beim Senden. Bitte versuchen Sie es später noch einmal.");
+        alert("Fehler beim Senden. Bitte überprüfen Sie Ihr Formbee-Token.");
         btn.textContent = originalText;
         btn.disabled = false;
       }
     })
     .catch(function(error) {
-      // Netzwerkfehler (z. B. keine Internetverbindung)
-      alert("Es gab ein Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
+      alert("Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
       btn.textContent = originalText;
       btn.disabled = false;
     });
   });
 })();
+
 /*
 (function () {
   var form = document.getElementById("contact-form");
