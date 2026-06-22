@@ -182,7 +182,7 @@
       return; 
     }
 
-    // 2. Wenn alles ausgefüllt ist: Seite am Neuladen hindern
+    // 2. Seite am Neuladen hindern
     e.preventDefault();
 
     // 3. Visuelles Feedback: Button sperren
@@ -191,35 +191,39 @@
     btn.textContent = "Nachricht wird gesendet …";
     btn.disabled = true;
 
-    // 4. Daten einsammeln
+    // 4. Daten einsammeln UND in JSON umwandeln (Wichtig für Formbee!)
     var formData = new FormData(form);
+    var jsonObject = Object.fromEntries(formData); // Macht ein Standard-Objekt daraus
 
     // 5. Daten im Hintergrund an Formbee senden
     fetch(form.action, {
       method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+      body: JSON.stringify(jsonObject), // Sende echten JSON-Text
+      headers: { 
+        'Content-Type': 'application/json', // Sagt Formbee: Hier kommt JSON!
+        'Accept': 'application/json' 
+      }
     })
     .then(function(response) {
+      // Wenn der Status-Code zwischen 200 und 299 liegt, war es erfolgreich!
       if (response.ok) {
-        // Erfolgsfall: Formular leeren und Erfolg anzeigen
         btn.textContent = "Erfolgreich gesendet!";
-        form.reset(); 
+        form.reset(); // Leert alle Eingabefelder
         alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
         
-        // Nach 4 Sekunden den Button wieder freigeben
         setTimeout(function () {
           btn.textContent = originalText;
           btn.disabled = false;
         }, 4000);
       } else {
-        // Falls Formbee z.B. wegen falscher Domain blockiert
-        alert("Fehler beim Senden. Bitte überprüfen Sie die Einstellungen in Ihrem Formbee-Dashboard.");
+        // Der Server hat geantwortet, aber mit einem Fehler (z.B. falsches Token)
+        alert("Fehler beim Senden. Bitte überprüfen Sie Ihr Formbee-Token im HTML.");
         btn.textContent = originalText;
         btn.disabled = false;
       }
     })
     .catch(function(error) {
+      // Netzwerkfehler (kein Internet oder Server komplett offline)
       alert("Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
       btn.textContent = originalText;
       btn.disabled = false;
