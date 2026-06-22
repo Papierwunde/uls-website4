@@ -3,7 +3,6 @@
    Pure vanilla JS, no dependencies, no build step required.
    GitHub Pages compatible.
    ============================================================= */
-console.log("JS geladen");
 "use strict";
 
 /* ── Auto-update footer year ──────────────────────────────────── */
@@ -170,7 +169,12 @@ console.log("JS geladen");
 })();
 
 /* ── Contact form ───────────────────────────── */
+console.log("JS geladen");
+
 document.getElementById('form').addEventListener('submit', async (ev) => {
+
+    console.log("Submit ausgelöst");
+
     ev.preventDefault();
 
     const formData = new FormData(ev.target);
@@ -180,7 +184,11 @@ document.getElementById('form').addEventListener('submit', async (ev) => {
         data[key] = value;
     });
 
+    console.log("Daten:", data);
+
     try {
+        console.log("Vor Fetch");
+
         const response = await fetch(ev.target.action, {
             method: 'POST',
             headers: {
@@ -189,20 +197,22 @@ document.getElementById('form').addEventListener('submit', async (ev) => {
             body: JSON.stringify(data)
         });
 
-        console.log('Status:', response.status);
+        console.log("Nach Fetch");
+        console.log("Status:", response.status);
+
+        const text = await response.text();
+        console.log("Response Body:", text);
 
         if (response.ok) {
-            alert('Erfolgreich gesendet');
+            alert("Erfolgreich gesendet");
             ev.target.reset();
         } else {
-            const text = await response.text();
-            console.error(text);
-            alert('Fehler beim Senden');
+            alert("Server Fehler: " + response.status);
         }
 
     } catch (err) {
-        console.error(err);
-        alert('Netzwerkfehler');
+        console.error("Fetch Fehler:", err);
+        alert("Netzwerkfehler");
     }
 });
 
