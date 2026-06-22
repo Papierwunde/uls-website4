@@ -174,8 +174,10 @@
   var form = document.getElementById("contact-form");
   if (!form) return;
 
-  form.addEventListener("submit", function (e) {
-    // 1. Prüfen, ob Pflichtfelder fehlen
+  // Wir machen die Funktion "async", genau wie in der Formbee-Dokumentation
+  form.addEventListener("submit", async function (e) {
+    
+    // 1. Pflichtfelder prüfen
     if (!form.checkValidity()) {
       e.preventDefault(); 
       form.reportValidity(); 
@@ -191,22 +193,23 @@
     btn.textContent = "Nachricht wird gesendet …";
     btn.disabled = true;
 
-    // 4. Daten einsammeln (Exakt wie in der Formbee-Doku)
-    var formData = new FormData(form);
-    var formObject = {};
-    formData.forEach(function (value, key) {
+    // 4. Daten einsammeln (Exakt aus der Formbee-Dokumentation)
+    const formData = new FormData(form);
+    const formObject = {};
+    formData.forEach((value, key) => {
       formObject[key] = value;
     });
 
-    // 5. Daten im Hintergrund an Formbee senden
-    fetch(form.action, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formObject)
-    })
-    .then(function(response) {
+    // 5. Senden mit try/catch (Exakt aus der Formbee-Dokumentation)
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formObject)
+      });
+
       if (response.ok) {
         // Erfolgsfall: Formular leeren und Erfolg anzeigen
         btn.textContent = "Erfolgreich gesendet!";
@@ -218,16 +221,18 @@
           btn.disabled = false;
         }, 4000);
       } else {
-        alert("Fehler beim Senden. Bitte überprüfen Sie die Einstellungen in Formbee.");
+        // Der Formbee-Server lehnt den Token oder die Domain ab
+        alert("Formbee meldet einen Fehler. Bitte prüfen Sie Ihr Token im HTML und ob Ihre GitHub-Domain bei Formbee freigeschaltet ist.");
         btn.textContent = originalText;
         btn.disabled = false;
       }
-    })
-    .catch(function(error) {
-      alert("Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
+    } catch (error) {
+      // Netzwerkfehler
+      console.error('Error submitting form:', error);
+      alert("Es gab ein Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
       btn.textContent = originalText;
       btn.disabled = false;
-    });
+    }
   });
 })();
 
