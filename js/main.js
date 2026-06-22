@@ -202,7 +202,7 @@
 
     // 5. Senden mit try/catch (Exakt aus der Formbee-Dokumentation)
     try {
-      const response = await fetch('https://api.formbee.dev/formbee/[01c7804d-ffdd-40e4-904d-79a69d5cc7fa]' {
+      const response = await fetch(form.action, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
