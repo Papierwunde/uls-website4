@@ -170,28 +170,6 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
-// Das offizielle, kurze Formbee-Skript ohne Schnickschnack
-const submitForm = async (event) => {
-    event.preventDefault();
-
-    const form = document.querySelector('#form');
-
-    const data = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-    };
-
-    const response = await fetch(form.action, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-
-    console.log(await response.text());
-};
 
 
 
