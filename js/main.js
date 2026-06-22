@@ -170,15 +170,6 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
-const submitForm = async (event) => {
-    event.preventDefault();
-    const form = document.querySelector('#contact-form');
-    const response = await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form)
-    });
-};
-document.querySelector('#contact-form').addEventListener('submit', submitForm);
 (function () {
   var form = document.getElementById("contact-form");
   if (!form) return;
@@ -186,12 +177,12 @@ document.querySelector('#contact-form').addEventListener('submit', submitForm);
   form.addEventListener("submit", function (e) {
     // 1. Prüfen, ob Pflichtfelder fehlen
     if (!form.checkValidity()) {
-      e.preventDefault(); // Verhindert das unendliche Laden/Senden der Seite!
-      form.reportValidity(); // Zwingt den Browser, die "Bitte ausfüllen"-Sprechblasen anzuzeigen!
-      return; // Bricht das Skript ab, der Button bleibt normal klickbar.
+      e.preventDefault(); 
+      form.reportValidity(); 
+      return; 
     }
 
-    // 2. Wenn alles ausgefüllt ist: Seite am Neuladen hindern und senden
+    // 2. Wenn alles ausgefüllt ist: Seite am Neuladen hindern
     e.preventDefault();
 
     // 3. Visuelles Feedback: Button sperren
@@ -203,7 +194,7 @@ document.querySelector('#contact-form').addEventListener('submit', submitForm);
     // 4. Daten einsammeln
     var formData = new FormData(form);
 
-    // 5. Daten im Hintergrund an Formbee senden (AJAX / Fetch)
+    // 5. Daten im Hintergrund an Formbee senden
     fetch(form.action, {
       method: form.method,
       body: formData,
@@ -211,17 +202,19 @@ document.querySelector('#contact-form').addEventListener('submit', submitForm);
     })
     .then(function(response) {
       if (response.ok) {
-        // Erfolgsfall: Formular leeren
+        // Erfolgsfall: Formular leeren und Erfolg anzeigen
         btn.textContent = "Erfolgreich gesendet!";
         form.reset(); 
         alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
         
+        // Nach 4 Sekunden den Button wieder freigeben
         setTimeout(function () {
           btn.textContent = originalText;
           btn.disabled = false;
         }, 4000);
       } else {
-        alert("Fehler beim Senden. Bitte überprüfen Sie Ihr Formbee-Token.");
+        // Falls Formbee z.B. wegen falscher Domain blockiert
+        alert("Fehler beim Senden. Bitte überprüfen Sie die Einstellungen in Ihrem Formbee-Dashboard.");
         btn.textContent = originalText;
         btn.disabled = false;
       }
@@ -233,6 +226,7 @@ document.querySelector('#contact-form').addEventListener('submit', submitForm);
     });
   });
 })();
+
 
 
 /*
