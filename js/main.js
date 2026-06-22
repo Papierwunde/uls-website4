@@ -3,7 +3,7 @@
    Pure vanilla JS, no dependencies, no build step required.
    GitHub Pages compatible.
    ============================================================= */
-
+console.log("JS geladen");
 "use strict";
 
 /* ── Auto-update footer year ──────────────────────────────────── */
@@ -170,7 +170,41 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
+document.getElementById('form').addEventListener('submit', async (ev) => {
+    ev.preventDefault();
 
+    const formData = new FormData(ev.target);
+
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    try {
+        const response = await fetch(ev.target.action, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        console.log('Status:', response.status);
+
+        if (response.ok) {
+            alert('Erfolgreich gesendet');
+            ev.target.reset();
+        } else {
+            const text = await response.text();
+            console.error(text);
+            alert('Fehler beim Senden');
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert('Netzwerkfehler');
+    }
+});
 
 
 
