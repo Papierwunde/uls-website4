@@ -169,6 +169,60 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabase = createClient(
+  "https://duvejzyfbckbtjesbkmw.supabase.co",
+  "sb_publishable_9FRYywOuh2prirRFPZp3EQ_NVlI0n2W"
+);
+
+document.getElementById("contact-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const { error } = await supabase
+    .from("messages")
+    .insert([
+      {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value || null,
+        subject: form.subject.value || null,
+        message: form.message.value
+      }
+    ]);
+
+  if (error) {
+    console.error(error);
+    alert("Fehler beim Senden ❌");
+    return;
+  }
+
+  alert("Nachricht erfolgreich gesendet ✅");
+  form.reset();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 console.log("JS geladen");
 
 document.getElementById('form').addEventListener('submit', async (ev) => {
@@ -215,7 +269,7 @@ document.getElementById('form').addEventListener('submit', async (ev) => {
         alert("Netzwerkfehler");
     }
 });
-
+*/
 
 
 
