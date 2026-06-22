@@ -191,24 +191,22 @@
     btn.textContent = "Nachricht wird gesendet …";
     btn.disabled = true;
 
-    // 4. Daten einsammeln UND in JSON umwandeln (Wichtig für Formbee!)
+    // 4. Daten einsammeln (Formbee verlangt das native FormData-Objekt!)
     var formData = new FormData(form);
-    var jsonObject = Object.fromEntries(formData); // Macht ein Standard-Objekt daraus
 
     // 5. Daten im Hintergrund an Formbee senden
     fetch(form.action, {
       method: form.method,
-      body: JSON.stringify(jsonObject), // Sende echten JSON-Text
+      body: formData, // Kein JSON.stringify mehr!
       headers: { 
-        'Content-Type': 'application/json', // Sagt Formbee: Hier kommt JSON!
-        'Accept': 'application/json' 
+        'Accept': 'application/json' // Keine Content-Type Header für FormData!
       }
     })
     .then(function(response) {
-      // Wenn der Status-Code zwischen 200 und 299 liegt, war es erfolgreich!
       if (response.ok) {
+        // Erfolgsfall: Formular leeren und Erfolg anzeigen
         btn.textContent = "Erfolgreich gesendet!";
-        form.reset(); // Leert alle Eingabefelder
+        form.reset(); 
         alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
         
         setTimeout(function () {
@@ -216,20 +214,21 @@
           btn.disabled = false;
         }, 4000);
       } else {
-        // Der Server hat geantwortet, aber mit einem Fehler (z.B. falsches Token)
+        // Der Server antwortet mit einem Fehler
         alert("Fehler beim Senden. Bitte überprüfen Sie Ihr Formbee-Token im HTML.");
         btn.textContent = originalText;
         btn.disabled = false;
       }
     })
     .catch(function(error) {
-      // Netzwerkfehler (kein Internet oder Server komplett offline)
+      // Netzwerkfehler
       alert("Verbindungsproblem. Bitte überprüfen Sie Ihre Internetverbindung.");
       btn.textContent = originalText;
       btn.disabled = false;
     });
   });
 })();
+
 
 
 
