@@ -170,71 +170,24 @@
 })();
 
 /* ── Contact form ───────────────────────────── */
-/* ── Contact form ───────────────────────────── */
-(function () {
-  var form = document.getElementById("contact-form");
-  if (!form) return;
-
-  // Wir nutzen "async" exakt wie in der Formbee-Dokumentation
-  form.addEventListener("submit", async function (ev) {
+// Das offizielle, kurze Formbee-Skript ohne Schnickschnack
+const submitForm = async (event) => {
+    event.preventDefault();
+    const form = document.querySelector('#form');
     
-    // Pflichtfelder prüfen
-    if (!form.checkValidity()) {
-      ev.preventDefault(); 
-      form.reportValidity(); 
-      return; 
-    }
-
-    ev.preventDefault();
-
-    // Visuelles Feedback: Button sperren
-    var btn = form.querySelector(".form-submit");
-    var originalText = btn.textContent;
-    btn.textContent = "Nachricht wird gesendet …";
-    btn.disabled = true;
-
-    // Daten in ein JSON-Objekt umwandeln (Exakt aus der Formbee-Doku!)
-    const formData = new FormData(ev.target);
-    const formObject = {};
-    formData.forEach((value, key) => {
-      formObject[key] = value;
+    // Sendet die Daten im Hintergrund
+    await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form)
     });
+    
+    // Optionale Bestätigung für den Nutzer
+    alert('Formular abgesendet!');
+    form.reset();
+};
 
-    try {
-      // Fetch-Anfrage mit echten JSON-Headern absenden
-      const response = await fetch(form.action, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formObject)
-      });
+document.querySelector('#form').addEventListener('submit', submitForm);
 
-      if (response.ok) {
-        // ERFOLG: Formular leeren und zurücksetzen
-        btn.textContent = "Erfolgreich gesendet!";
-        form.reset(); 
-        alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
-        
-        setTimeout(function () {
-          btn.textContent = originalText;
-          btn.disabled = false;
-        }, 4000);
-      } else {
-        // Fehler vom Server
-        alert("Fehler beim Senden. Bitte überprüfen Sie Ihre Dashboard-Einstellungen.");
-        btn.textContent = originalText;
-        btn.disabled = false;
-      }
-    } catch (error) {
-      // Netzwerkfehler
-      console.error('Error submitting form:', error);
-      alert("Fehler bei der Übermittlung. Bitte überprüfen Sie Ihre Verbindung.");
-      btn.textContent = originalText;
-      btn.disabled = false;
-    }
-  });
-})();
 
 
 
