@@ -175,24 +175,6 @@ const submitForm = async (event) => {
     event.preventDefault();
 
     const form = document.querySelector('#form');
-    
-    try {
-        const response = await fetch(form.action, {
-            method: form.method,
-            body: new FormData(form)
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        alert('Formular abgesendet!');
-        form.reset();
-
-    } catch (err) {
-        console.error(err);
-        alert('Fehler beim Absenden!');
-    }
 
     const data = {
         name: form.name.value,
@@ -210,29 +192,7 @@ const submitForm = async (event) => {
 
     console.log(await response.text());
 };
-const submitForm = async (event) => {
-    event.preventDefault();
 
-    const form = document.querySelector('#form');
-
-    try {
-        const response = await fetch(form.action, {
-            method: form.method,
-            body: new FormData(form)
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        alert('Formular abgesendet!');
-        form.reset();
-
-    } catch (err) {
-        console.error(err);
-        alert('Fehler beim Absenden!');
-    }
-};
 
 
 
