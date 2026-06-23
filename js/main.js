@@ -217,7 +217,8 @@ form.addEventListener("submit", async (e) => {
       alert("Fehler beim Senden");
       return;
     }
-
+    console.log("MAIL FETCH START");
+    
     // 2. EMAIL NUR BEI ERFOLG
     const mailRes = await fetch(
       "https://duvejzyfbckbtjesbkmw.supabase.co/functions/v1/resend-email",
