@@ -41,13 +41,7 @@
             <path d="M14,9C13.007,9.933 12.2,11.404 12.2,13C12.2,14.596 13.007,16.067 14,17" style="fill:white;fill-opacity:0;stroke:rgb(45,80,22);stroke-width:2.49px;"/>
         </g>
     </g>
-    <g transform="matrix(0,-0.315789,0.75,0,0,14.210526)">
-        <path d="M7,6.7L7,5.3L21.25,5.3L21.25,4L26,6L21.25,8L21.25,6.7L7,6.7Z" style="fill:white;fill-opacity:0;stroke:rgb(45,80,22);stroke-width:3.48px;"/>
-    </g>
-    <g transform="matrix(0,-0.315789,0.75,0,23,14.210526)">
-        <path d="M7,6.7L7,5.3L21.25,5.3L21.25,4L26,6L21.25,8L21.25,6.7L7,6.7Z" style="fill:white;fill-opacity:0;stroke:rgb(45,80,22);stroke-width:3.48px;"/>
-    </g>
     <g transform="matrix(0,-0.473684,0.75,0,11.5,15.315789)">
-        <path d="M7,6.7L7,5.3L22.833,5.3L22.833,4L26,6L22.833,8L22.833,6.7L7,6.7Z" style="fill:white;fill-opacity:0;stroke:rgb(45,80,22);stroke-width:3.19px;"/>
+        <path d="M7,6L21.778,6L21.778,3.333L26,6L21.778,8.667L21.778,6L7,6Z" style="fill:white;fill-opacity:0;stroke:rgb(45,80,22);stroke-width:3.19px;"/>
     </g>
 </svg>
