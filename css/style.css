@@ -818,15 +818,10 @@ p  { max-width: 68ch; }
 }
 .press-card-img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: auto;
   object-fit: cover;
   display: block;
-  background: var(--cream); /* visible when image is missing */
-  /*
-     IMAGE SLOT – replace with newspaper scan / photo:
-     <img class="press-card-img" src="images/presse/artikel-2025.jpg"
-          alt="Zeitungsartikel: [Titel]" loading="lazy" />
-  */
+  background: var(--cream);
 }
 .press-card-body { padding: 1.25rem; }
 .press-card-source {

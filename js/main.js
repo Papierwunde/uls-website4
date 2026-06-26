@@ -4,6 +4,29 @@
    GitHub Pages compatible.
    ============================================================= */
 "use strict";
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // ZUERST: Header laden
+    fetch('header.html')
+        .then(response => response.text())
+        .then(headerData => {
+            // Header in den Platzhalter einfügen
+            document.getElementById('header-placeholder').innerHTML = headerData;
+            
+            // DANACH: Footer laden
+            return fetch('footer.html');
+        })
+        .then(response => response.text())
+        .then(footerData => {
+            // Footer in den Platzhalter einfügen
+            document.getElementById('footer-placeholder').innerHTML = footerData;
+
+            // ERST JETZT: Alle Funktionen starten, wenn alles im HTML existiert
+            initStickyHeader();
+            initMobileNavigation();
+        })
+        .catch(error => console.error("Fehler beim Laden der Website-Komponenten:", error));
+});
 
 /* ── Auto-update footer year ──────────────────────────────────── */
 (function () {
@@ -11,29 +34,26 @@
   if (el) el.textContent = new Date().getFullYear();
 })();
 
+
 /* ── Sticky header: add .scrolled class on scroll ─────────────── */
-(function () {
-  /* Support both id="site-header" and id="navbar" */
+function initStickyHeader() {
   const header = document.getElementById("site-header") || document.getElementById("navbar");
-  if (!header) return;
+  if (!header) return; // Findet den Header jetzt, da er geladen ist
 
   function onScroll() {
     header.classList.toggle("scrolled", window.scrollY > 40);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll(); /* run once on load */
-})();
+}
 
 /* ── Mobile navigation toggle ─────────────────────────────────── */
-(function () {
+function initMobileNavigation() {
   const toggle = document.getElementById("nav-toggle");
-  /* Support both id="nav-menu" (new pages) and id="nav-links" (index.html) */
   const menu   = document.getElementById("nav-menu") || document.getElementById("nav-links");
-  if (!toggle || !menu) return;
+  if (!toggle || !menu) return; // Findet die Elemente jetzt ebenfalls
 
   function openMenu() {
-    /* Add both class names: "open" for the legacy CSS rule,
-       "is-open" for the newer CSS rule – both are in style.css */
     menu.classList.add("is-open", "open");
     toggle.setAttribute("aria-expanded", "true");
     toggle.classList.add("is-active", "open");
@@ -65,7 +85,8 @@
       toggle.focus();
     }
   });
-})();
+}
+
 
 /* ── Hero background zoom-in on load ──────────────────────────── */
 (function () {

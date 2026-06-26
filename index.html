@@ -8,51 +8,13 @@
   <meta name="theme-color" content="#2D5016" /> <!-- Färb die Adressleiste in mobilen Browsern in dunkles Grün ein-->
   <!-- Text im Browser-Tab -->
   <title>ULS Steinhagen – Umwelt &amp; Lebensqualität</title>
-
+  <link rel="icon" type="image/png" href="uls-steinhagen-logo.png">
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Skip-Link für Barrierefreiheit -->
-  <a class="sr-only" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--green-dark);color:#fff;padding:.5rem 1rem;z-index:9999;">Zum Inhalt springen</a>
-  <!-- NAVBAR -->
-  <header id="navbar" role="banner">
-    <div class="container nav-inner"> <!-- Logo und Text links -->
-      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
-        <div class="nav-logo-icon" aria-hidden="true">
-          <span class="icon-slot">
-             <img src="icons/uls-steinhagen-logo.png" alt="uls-steinhagen-logo Baum" />
-          </span>
-        </div>
-        <div class="nav-logo-text">
-          <span>ULS Steinhagen</span>
-          <span>Umwelt &amp; Lebensqualität</span>
-        </div>
-      </a>
-
-      <!-- Mobile Hamburger (JS controlled) 
-           aria-controls="nav-links" verknüpft den Button technisch mit der Navigation -->
-      <button
-        id="nav-toggle"
-        class="nav-toggle"
-        aria-controls="nav-links"
-        aria-expanded="false"
-        aria-label="Menü öffnen"
-      >
-        <span></span><span></span><span></span> <!-- Hamburger Striche -->
-      </button>
-
-      <!-- Main navigation links | "nav-cta" (Call to Action) lässt sie aussehen wie ein button. -->
-      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
-        <a href="verein.html">Verein</a>
-        <a href="aktuelles.html">Aktuelles</a>
-        <a href="themen.html">Unsere Themen</a>
-        <a href="Presseecho.html">Presseecho</a>
-        <a href="termine.html" >Termine</a>
-        <a href="#contact" class="nav-cta">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
 
   <!--MAIN -->
   <main id="main">
@@ -201,7 +163,7 @@
         <div class="news-grid">
           <!-- NEWS CARD -->
           <article class="news-card reveal" aria-labelledby="news1-title">
-            <img class="news-card-img" src="images/IMG_20260310_144230.jpg" alt="Vereinsmilglieder posieren vor den fertigen Nisthilfen im Wald" loading="lazy" />
+            <img class="news-card-img" src="images/aktuelles/nisthilfen.jpg" alt="Vereinsmilglieder posieren vor den fertigen Nisthilfen im Wald" loading="lazy" />
             <div class="news-card-body">
               <span class="news-card-tag">Artenschutz</span>
               <h3 class="news-card-title" id="news1-title">Nisthilfen für den Walderlebnispfad Halle</h3>
@@ -219,7 +181,7 @@
           </article>
 
           <article class="news-card reveal" aria-labelledby="news2-title">
-            <img class="news-card-img" src="images/20241124_171208.jpg" alt="Eine Gruppe von Leuten hören einen Vortrag an" loading="lazy" />
+            <img class="news-card-img" src="images/aktuelles/epa_vortrag.jpg" alt="Eine Gruppe von Leuten hören einen Vortrag an" loading="lazy" />
             <div class="news-card-body">
               <span class="news-card-tag">Vortrag</span>
               <h3 class="news-card-title" id="news2-title">Die elektronische Patientenakte</h3>
@@ -237,7 +199,7 @@
           </article>
 
           <article class="news-card reveal" aria-labelledby="news3-title">
-            <img class="news-card-img" src="images/20240901_144301.jpg" alt="Eine kleine Gruppe steht im Wald, bereit zu wandern" loading="lazy" />
+            <img class="news-card-img" src="images/aktuelles/waldspaziergang.jpg" alt="Eine kleine Gruppe steht im Wald, bereit zu wandern" loading="lazy" />
             <div class="news-card-body">
               <span class="news-card-tag">Spazieren</span>
               <h3 class="news-card-title" id="news3-title">Waldspaziergang des ULS-Umweltvereins</h3>
@@ -527,28 +489,28 @@
         <div class="press-grid">
           <!-- PRESS CARD -->
           <article class="press-card reveal">
-            <img class="press-card-img" src="images/hero-forest.png" alt="Zeitungsartikel Beschreibung" loading="lazy" />
+            <img class="press-card-img" src="images/presseecho/umweltverein.png" alt="Umweltverein" loading="lazy" />
             <div class="press-card-body">
-              <p class="press-card-source">Quelle: Neue Westfälische</p>
-              <h4 class="press-card-title">Titel des Presseartikels</h4>
-              <p class="press-card-date">TT. Monat JJJJ</p>
+              <p class="press-card-source">Quelle: Haller Kreisblatt</p>
+              <h4 class="press-card-title">Nicht normal: "Kurze Hose an Silvester"</h4>
+              <p class="press-card-date">01. Dezember 2023</p>
             </div>
           </article>
 
           <article class="press-card reveal">
-            <img class="press-card-img" src="images/hero-forest.png" alt="Zeitungsartikel Beschreibung" loading="lazy" />
+            <img class="press-card-img" src="images/presseecho/deter-gelaende.png" alt="Deter-Gelände" loading="lazy" />
             <div class="press-card-body">
-              <p class="press-card-source">Quelle: Westfalen-Blatt</p>
-              <h4 class="press-card-title">Titel des Presseartikels</h4>
-              <p class="press-card-date">TT. Monat JJJJ</p>
+              <p class="press-card-source">Quelle: Haller Kreisblatt</p>
+              <h4 class="press-card-title">Detert: Gar nicht so öko wie gedacht?</h4>
+              <p class="press-card-date">13. Januar 2022</p>
             </div>
           </article>
 
           <article class="press-card reveal">
-            <img class="press-card-img" src="images/hero-forest.png" alt="Zeitungsartikel Beschreibung" loading="lazy" />
+            <img class="press-card-img" src="images/presseecho/hochwassergefahr.png" alt="Bach am Feld" loading="lazy" />
             <div class="press-card-body">
-              <p class="press-card-source">Quelle: Lokalzeitung</p>
-              <h4 class="press-card-title">Titel des Presseartikels</h4>
+              <p class="press-card-source">Quelle: Haller Kreisblatt</p>
+              <h4 class="press-card-title">Dilemma: Seltene Pflanze verhindert Großprojekt in Steinhagen</h4>
               <p class="press-card-date">TT. Monat JJJJ</p>
             </div>
           </article>
@@ -678,82 +640,8 @@
 
   </main>
 
-
-  <!-- FOOTER -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand column -->
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
-            <div class="nav-logo-icon" aria-hidden="true">
-              <span class="icon-slot">
-                <img src="icons/uls-steinhagen-logo.png" alt="uls-steinhagen-logo Baum">
-              </span>
-            </div>
-            <div class="nav-logo-text">
-              <span>ULS Steinhagen</span>
-              <span>Umwelt &amp; Lebensqualität</span>
-            </div>
-          </a>
-          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V.</p>
-        </div>
-
-        <!-- Navigation Spalte -->
-        <div class="footer-col">
-          <h5>Navigation</h5>
-          <ul>
-            <li><a href="index.html">Start</a></li>
-            <li><a href="ueber-uns.html">Über uns</a></li>
-            <li><a href="news.html">Aktuelles</a></li>
-            <li><a href="termine.html">Termine</a></li>
-            <li><a href="themen.html">Unsere Themen</a></li>
-            <li><a href="presseecho.html">Presseecho</a></li>
-          </ul>
-        </div>
-
-        <!-- Über uns Spalte-->
-        <div class="footer-col">
-          <h5>Über uns</h5>
-          <ul>
-            <li><a href="ueber-uns.html">Zum Verein</a></li>
-            <li><a href="ueber-uns.html#vorstand">Vorstand</a></li>
-            <li><a href="ziele.html">Ziele &amp; Satzung</a></li>
-            <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
-          </ul>
-        </div>
-
-        <!-- Kontakt Spalte -->
-        <div class="footer-col">
-          <h5>Kontakt</h5>
-          <ul>
-            <li><a href="mailto:umweltverein@uls-steinhagen.de">E-Mail schreiben</a></li>
-            <li><a href="tel:+4952048911">05204 89118</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <span>&copy; Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
-        <div class="footer-bottom-right">
-          <a href="impressum.html">Impressum</a>
-          <a href="impressum.html#datenschutz">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Zurück nach oben button -->
-  <button id="back-to-top" aria-label="Zurück nach oben">
-    <span class="icon-slot" aria-hidden="true">
-      <img src="icons/pfeil_hoch.svg" alt="check-mark" class="icon-slot">
-    </span>
-  </button>
-
+  <div id="footer-placeholder"></div>
+  
   <script src="js/main.js"></script> <!--type="module"-->
 </body>
 </html>

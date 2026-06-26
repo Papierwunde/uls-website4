@@ -9,34 +9,46 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- ══ NAVBAR (identical on every page – copy/paste when adding pages) ══ -->
+  <!-- Skip-Link für Barrierefreiheit -->
+  <a class="sr-only" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--green-dark);color:#fff;padding:.5rem 1rem;z-index:9999;">Zum Inhalt springen</a>
+  <!-- NAVBAR -->
   <header id="navbar" role="banner">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
+    <div class="container nav-inner"> <!-- Logo und Text links -->
+      <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Alle Termine">
         <div class="nav-logo-icon" aria-hidden="true">
-          <!-- ICON SLOT: your logo icon -->
-          <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+          <span class="icon-slot">
+             <img src="icons/uls-steinhagen-logo.png" alt="uls-steinhagen-logo Baum" />
+          </span>
         </div>
         <div class="nav-logo-text">
           <span>ULS Steinhagen</span>
           <span>Umwelt &amp; Lebensqualität</span>
         </div>
       </a>
-      <button id="nav-toggle" class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
+
+      <!-- Mobile Hamburger (JS controlled) 
+           aria-controls="nav-links" verknüpft den Button technisch mit der Navigation -->
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        aria-controls="nav-links"
+        aria-expanded="false"
+        aria-label="Menü öffnen"
+      >
+        <span></span><span></span><span></span> <!-- Hamburger Striche -->
       </button>
+
+      <!-- Main navigation links | "nav-cta" (Call to Action) lässt sie aussehen wie ein button. -->
       <nav id="nav-links" class="nav-links" role="navigation" aria-label="Hauptnavigation">
-        <a href="ueber-uns.html">Über uns</a>
-        <a href="news.html">Aktuelles</a>
-        <a href="termine.html" aria-current="page">Termine</a>
+        <a href="verein.html">Verein</a>
+        <a href="aktuelles.html">Aktuelles</a>
         <a href="themen.html">Unsere Themen</a>
-        <a href="presseecho.html">Presseecho</a>
-        <a href="index.html#contact" class="nav-cta">Kontakt</a>
+        <a href="Presseecho.html">Presseecho</a>
+        <a href="termine.html" >Termine</a>
+        <a href="#contact" class="nav-cta">Kontakt</a>
       </nav>
     </div>
   </header>
-
   <main id="main">
 
     <!-- Page hero -->
@@ -153,22 +165,28 @@
 
   </main>
 
-  <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="container">
       <div class="footer-grid">
+
+        <!-- Brand column -->
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite" style="color:white;">
+          <a href="index.html" class="nav-logo" aria-label="ULS Steinhagen – Startseite">
             <div class="nav-logo-icon" aria-hidden="true">
-              <span class="icon-slot" style="width:22px;height:22px;color:white;"></span>
+              <span class="icon-slot">
+                <img src="icons/uls-steinhagen-logo.png" alt="uls-steinhagen-logo Baum">
+              </span>
             </div>
-            <div class="nav-logo-text" style="color:white;">
+            <div class="nav-logo-text">
               <span>ULS Steinhagen</span>
               <span>Umwelt &amp; Lebensqualität</span>
             </div>
           </a>
-          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V. – gegründet 1991.</p>
+          <p>Verein zur Förderung der Umwelt- und Lebensqualität in Steinhagen e.V.</p>
         </div>
+
+        <!-- Navigation Spalte -->
         <div class="footer-col">
           <h5>Navigation</h5>
           <ul>
@@ -180,6 +198,8 @@
             <li><a href="presseecho.html">Presseecho</a></li>
           </ul>
         </div>
+
+        <!-- Über uns Spalte-->
         <div class="footer-col">
           <h5>Über uns</h5>
           <ul>
@@ -189,6 +209,8 @@
             <li><a href="mitgliedschaft.html">Mitglied werden</a></li>
           </ul>
         </div>
+
+        <!-- Kontakt Spalte -->
         <div class="footer-col">
           <h5>Kontakt</h5>
           <ul>
@@ -198,10 +220,12 @@
             <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
           </ul>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span>&copy; 2025 Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
-        <div style="display:flex;gap:1.25rem;">
+        <span>&copy; Verein zur Förderung der Umwelt- und Lebensqualität Steinhagen e.V.</span>
+        <div class="footer-bottom-right">
           <a href="impressum.html">Impressum</a>
           <a href="impressum.html#datenschutz">Datenschutz</a>
         </div>
