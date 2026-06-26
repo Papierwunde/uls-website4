@@ -2,9 +2,9 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g transform="matrix(0.734735,0,0,0.782609,4.244246,1.434783)">
-        <path d="M16,25C16,25 13.304,21.127 12,12C11,5 13,2 16,2C19,2 21,5 20,12C18.696,21.127 16,25 16,25Z" style="fill:none;stroke:rgb(74,124,47);stroke-width:2.63px;"/>
+        <path d="M16,25C16,25 13.304,21.127 12,12C11,5 13,2 16,2C19,2 21,5 20,12C18.696,21.127 16,25 16,25Z" style="fill:none;stroke:black;stroke-width:2.63px;"/>
     </g>
     <g transform="matrix(0.833333,0,0,0.833333,1.833333,1.5)">
-        <circle cx="17" cy="30" r="3" style="fill:white;fill-opacity:0;stroke:rgb(74,124,47);stroke-width:2.4px;"/>
+        <circle cx="17" cy="30" r="3" style="fill:white;fill-opacity:0;stroke:black;stroke-width:2.4px;"/>
     </g>
 </svg>

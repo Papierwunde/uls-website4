@@ -2,18 +2,18 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g transform="matrix(1.083333,0,0,1,-1.333333,5)">
-        <path d="M4,16C4,9.377 9.377,4 16,4C22.623,4 28,9.377 28,16" style="fill:white;fill-opacity:0;stroke:rgb(45,80,22);stroke-width:1.92px;"/>
+        <path d="M4,16C4,9.377 9.377,4 16,4C22.623,4 28,9.377 28,16" style="fill:white;fill-opacity:0;stroke:black;stroke-width:1.92px;"/>
     </g>
     <g transform="matrix(1,0,0,1,-0,6)">
-        <path d="M30,17L30,19C30,19.552 29.552,20 29,20L3,20C2.448,20 2,19.552 2,19L2,17C2,16.448 2.448,16 3,16L29,16C29.552,16 30,16.448 30,17Z" style="fill:white;fill-opacity:0;stroke:rgb(45,80,22);stroke-width:2px;"/>
+        <path d="M30,17L30,19C30,19.552 29.552,20 29,20L3,20C2.448,20 2,19.552 2,19L2,17C2,16.448 2.448,16 3,16L29,16C29.552,16 30,16.448 30,17Z" style="fill:white;fill-opacity:0;stroke:black;stroke-width:2px;"/>
     </g>
     <g transform="matrix(1,0,0,1,0,0.5)">
-        <path d="M14,18L11,13" style="fill:none;stroke:rgb(45,80,22);stroke-width:2px;"/>
+        <path d="M14,18L11,13" style="fill:none;stroke:black;stroke-width:2px;"/>
     </g>
     <g transform="matrix(1,0,0,1,1,0.5)">
-        <path d="M17,18L20,13" style="fill:none;stroke:rgb(45,80,22);stroke-width:2px;"/>
+        <path d="M17,18L20,13" style="fill:none;stroke:black;stroke-width:2px;"/>
     </g>
     <g transform="matrix(1,0,0,1,0,1)">
-        <path d="M16,11L15,6L17,6L16,11" style="fill:none;stroke:rgb(45,80,22);stroke-width:2px;"/>
+        <path d="M16,11L15,6L17,6L16,11" style="fill:none;stroke:black;stroke-width:2px;"/>
     </g>
 </svg>

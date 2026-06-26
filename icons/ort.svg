@@ -3,10 +3,10 @@
 <svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g>
         <g transform="matrix(-1.727273,-0,0,-1.181818,45.727273,37.272727)">
-            <path d="M17.5,7C17.5,7 23,16.773 23,20.962C23,25.398 20.536,29 17.5,29C14.464,29 12,25.398 12,20.962C12,16.773 17.5,7 17.5,7Z" style="fill:white;fill-opacity:0;stroke:rgb(74,124,47);stroke-width:1.35px;"/>
+            <path d="M17.5,7C17.5,7 23,16.773 23,20.962C23,25.398 20.536,29 17.5,29C14.464,29 12,25.398 12,20.962C12,16.773 17.5,7 17.5,7Z" style="fill:white;fill-opacity:0;stroke:black;stroke-width:1.35px;"/>
         </g>
         <g transform="matrix(1.5,0,0,1.5,-10,-6)">
-            <circle cx="17" cy="12" r="2" style="fill:white;fill-opacity:0;stroke:rgb(74,124,47);stroke-width:1.33px;"/>
+            <circle cx="17" cy="12" r="2" style="fill:white;fill-opacity:0;stroke:black;stroke-width:1.33px;"/>
         </g>
     </g>
 </svg>

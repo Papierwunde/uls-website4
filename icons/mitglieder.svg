@@ -2,15 +2,15 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g transform="matrix(2.25,0,0,2.25,-26,-16.5)">
-        <circle cx="17" cy="12" r="2" style="fill:white;fill-opacity:0;stroke:rgb(74,124,47);stroke-width:0.89px;"/>
+        <circle cx="17" cy="12" r="2" style="fill:white;fill-opacity:0;stroke:black;stroke-width:0.89px;"/>
     </g>
     <g transform="matrix(2.25,0,0,2.25,-19.25,-16.5)">
-        <path d="M17,10C18.104,10 19,10.896 19,12C19,13.104 18.104,14 17,14" style="fill:white;fill-opacity:0;stroke:rgb(74,124,47);stroke-width:0.89px;"/>
+        <path d="M17,10C18.104,10 19,10.896 19,12C19,13.104 18.104,14 17,14" style="fill:white;fill-opacity:0;stroke:black;stroke-width:0.89px;"/>
     </g>
     <g transform="matrix(0.804348,0,0,1.375,0.586957,-8.875)">
-        <path d="M3,25.48L3,24.52C3,22.577 5.169,21 7.84,21L21.16,21C23.831,21 26,22.577 26,24.52L26,25.48" style="fill:white;fill-opacity:0;stroke:rgb(74,124,47);stroke-width:1.78px;"/>
+        <path d="M3,25.48L3,24.52C3,22.577 5.169,21 7.84,21L21.16,21C23.831,21 26,22.577 26,24.52L26,25.48" style="fill:white;fill-opacity:0;stroke:black;stroke-width:1.78px;"/>
     </g>
     <g transform="matrix(1,0,0,1.375,2.84,-8.875)">
-        <path d="M21.16,21C23.831,21 26,22.577 26,24.52L26,25.48" style="fill:white;fill-opacity:0;stroke:rgb(74,124,47);stroke-width:1.66px;"/>
+        <path d="M21.16,21C23.831,21 26,22.577 26,24.52L26,25.48" style="fill:white;fill-opacity:0;stroke:black;stroke-width:1.66px;"/>
     </g>
 </svg>
