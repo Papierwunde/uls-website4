@@ -88,7 +88,6 @@ function initMobileNavigation() {
   });
 }
 
-
 /* ── Hero background zoom-in on load ──────────────────────────── */
 (function () {
   const bg = document.querySelector(".hero-bg");
