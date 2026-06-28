@@ -496,7 +496,7 @@ p  { max-width: 68ch; }
   overflow: hidden;
   background: linear-gradient( /* Verlauf */
     180deg,
-    var(--green-mid) -100%,
+    var(--green-mid) 0%,
     var(--green-dark) 100%
   );
   padding-block: 2.5rem;
