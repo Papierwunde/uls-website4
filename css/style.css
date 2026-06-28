@@ -1134,6 +1134,7 @@ p  { max-width: 68ch; }
 #contact {
   background: var(--cream);
   transform: translateZ(0); 
+  will-change: transform; 
 }
 .contact-layout {
   display: grid;
