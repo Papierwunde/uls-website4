@@ -396,7 +396,7 @@ p  { max-width: 68ch; }
   transform: scale(1.08);
   transition: transform 8s ease-out;
 }
-.hero-bg.loaded { transform: scale(1.02); }
+.hero-bg.loaded { transform: scale(1.05); }
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -1131,7 +1131,10 @@ p  { max-width: 68ch; }
 
 
 /* ── CONTACT ─────────────────────────────────────────── */
-#contact { background: var(--cream); }
+#contact {
+  background: var(--cream);
+  transform: translateZ(0); 
+}
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
