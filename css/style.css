@@ -791,7 +791,12 @@ p  { max-width: 68ch; }
   color: var(--green-mid);
 }
 .event-info h4 { margin-bottom: .3rem; color: var(--green-dark); }
-.event-info p { font-size: .9rem; max-width: none; }
+.event-info p {
+  font-size: .9rem;
+  max-width: none;
+
+  margin-top: 8px;
+}
 .event-meta-row {
   display: flex;
   flex-wrap: wrap;
@@ -811,7 +816,8 @@ p  { max-width: 68ch; }
 }
 /* Icon slot inside event tags */
 .event-tag .icon-slot {
-  width: 11px; height: 11px;
+  width: 20px; height: 20px;
+  /* width: 11px; height: 11px; */
   filter: brightness(0) saturate(100%) invert(57%) sepia(24%) saturate(6137%) hue-rotate(64deg) brightness(66%) contrast(63%);
   /*color: var(--green-mid);*/
 }
